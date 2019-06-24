@@ -1,10 +1,12 @@
 import React from "react";
 import "./App.scss";
 
+import CoordinatorSignup from "./components/CoordinatorSignup";
+
 function App() {
   return (
     <div className="App">
-      <p>BCF</p>
+      <CoordinatorSignup />
     </div>
   );
 }
