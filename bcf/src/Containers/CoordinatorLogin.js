@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import LoginHeader from "../FunctionalComponents/LoginHeader";
-
 class CoordinatorLogin extends Component {
   state = {
     credentials: {
@@ -34,7 +32,6 @@ class CoordinatorLogin extends Component {
   render() {
     return (
       <>
-        <LoginHeader />
         <div>
           <form onSubmit={this.login}>
             <h2>Welcome Back</h2>
