@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 class CoordinatorLogin extends Component {
   state = {
-    credentials: {
-      username: "",
+    user: {
+      email: "",
       password: ""
     }
   };
@@ -11,19 +11,19 @@ class CoordinatorLogin extends Component {
   handleChanges = e => {
     console.log(e.target.value);
     this.setState({
-      credentials: {
-        ...this.state.credientials,
+      user: {
+        ...this.state.user,
         [e.target.name]: e.target.value
       }
     });
   };
 
-  login = e => {
+  handleLogin = e => {
     e.preventDefault();
-    console.log("In login function.");
+    console.log("In handleLogin function.");
 
     // this.props.login(
-    //   this.state.credentials.then(() => {
+    //   this.state.user.then(() => {
     //     this.props.history.push("/protected");
     //   })
     // );
@@ -32,15 +32,15 @@ class CoordinatorLogin extends Component {
   render() {
     return (
       <>
-        <div>
-          <form onSubmit={this.login}>
+        <div className="coordinator-login-page-container">
+          <form onSubmit={this.handleLogin}>
             <h2>Welcome Back</h2>
-            <label htmlFor="username">Username</label>
+            <label htmlFor="email">Username</label>
             <input
-              id="username"
-              type="text"
-              name="username"
-              value={this.state.credentials.username}
+              id="email"
+              type="email"
+              name="email"
+              value={this.state.user.email}
               onChange={this.handleChanges}
             />
             <label htmlFor="password">Password</label>
@@ -48,7 +48,7 @@ class CoordinatorLogin extends Component {
               id="password"
               type="password"
               name="password"
-              value={this.state.credentials.password}
+              value={this.state.user.password}
               onChange={this.handleChanges}
             />
             <a className="forgotPassword" href="/">

@@ -2,10 +2,10 @@ import React, { Component } from "react";
 
 class CoordinatorSignup extends Component {
   state = {
-    credentials: {
-      firstName: "",
-      lastName: "",
-      username: "",
+    user: {
+      firstname: "",
+      lastname: "",
+      email: "",
       password: ""
     }
   };
@@ -13,19 +13,19 @@ class CoordinatorSignup extends Component {
   handleChanges = e => {
     console.log(e.target.value);
     this.setState({
-      credentials: {
-        ...this.state.credientials,
+      user: {
+        ...this.state.user,
         [e.target.name]: e.target.value
       }
     });
   };
 
-  signUp = e => {
+  handleSignup = e => {
     e.preventDefault();
     console.log("In create account function.");
 
     // this.props.signUp(
-    //   this.state.credentials.then(() => {
+    //   this.state.user.then(() => {
     //     this.props.history.push("/protected");
     //   })
     // );
@@ -34,23 +34,23 @@ class CoordinatorSignup extends Component {
   render() {
     return (
       <>
-        <div className="coordinator-signup-page">
-          <form onSubmit={this.signUp}>
+        <div className="coordinator-signup-page-container">
+          <form onSubmit={this.handleSignup}>
             <h2>Create an Account</h2>
             <label htmlFor="firstname">First Name</label>
             <input
               id="firstname"
               type="text"
-              name="firstName"
-              value={this.state.credentials.firstName}
+              name="firstname"
+              value={this.state.user.firstname}
               onChange={this.handleChanges}
             />
             <label htmlFor="lastname">Last Name</label>
             <input
               id="lastname"
               type="text"
-              name="lastName"
-              value={this.state.credentials.lastName}
+              name="lastname"
+              value={this.state.user.lastname}
               onChange={this.handleChanges}
             />
             <label htmlFor="username">Username</label>
@@ -58,7 +58,7 @@ class CoordinatorSignup extends Component {
               id="username"
               type="text"
               name="username"
-              value={this.state.credentials.username}
+              value={this.state.user.username}
               onChange={this.handleChanges}
             />
             <label htmlFor="password">Password</label>
@@ -66,7 +66,7 @@ class CoordinatorSignup extends Component {
               id="password"
               type="password"
               name="password"
-              value={this.state.credentials.password}
+              value={this.state.user.password}
               onChange={this.handleChanges}
             />
             <button>Sign In</button>

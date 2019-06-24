@@ -1,46 +1,90 @@
 import React, { Component } from "react";
 
 class CoordinatorProfile extends Component {
+  state = {
+    user: {
+      firstname: "",
+      lastname: "",
+      email: "",
+      title: "",
+      country: ""
+    }
+  };
+
+  handleChanges = e => {
+    this.setState({
+      user: {
+        ...this.state.user,
+        [e.target.name]: e.target.value
+      }
+    });
+    // console.log(this.state.user);
+  };
+
+  handleUpdate = e => {
+    e.preventDefault();
+    const updatedProfile = {
+      firstname: this.state.user.firstname,
+      lastname: this.state.user.lastname,
+      email: this.state.user.email,
+      title: this.state.user.title,
+      country: this.state.user.country
+    };
+    console.log(updatedProfile);
+
+    // this.props.update(
+    //   this.state.user.then(() => {
+    //     this.props.history.push("/protected");
+    //   })
+    // );
+  };
+
   render() {
     return (
       <div className="coordinator-profile-page-container">
         <h2>Your Profile</h2>
         <div className="upload-profile-pic">Upload profile picture</div>
 
-        <form onSubmit={this.signUp}>
+        <form onSubmit={this.handleUpdate}>
           <h2>Create an Account</h2>
-          <p>First Name</p>
+          <label htmlFor="firstname">First Name</label>
           <input
+            id="firstname"
             type="text"
-            name="firstName"
-            value={this.state.credentials.firstName}
+            name="firstname"
+            value={this.state.user.firstname}
             onChange={this.handleChanges}
           />
-          <p>Last Name</p>
+          <label htmlFor="lastname">Last Name</label>
           <input
+            id="lastname"
             type="text"
-            name="lastName"
-            value={this.state.credentials.lastName}
+            name="lastname"
+            value={this.state.user.lastname}
             onChange={this.handleChanges}
           />
-          <p>Email</p>
+          <label htmlFor="email">Email</label>
           <input
+            id="email"
             type="email"
-            name="username"
-            value={this.state.credentials.email}
+            name="email"
+            value={this.state.user.email}
             onChange={this.handleChanges}
           />
-          <p>Title</p>
+          <label htmlFor="title">Title</label>
           <input
+            id="title"
             type="text"
             name="title"
-            value={this.state.credentials.title}
+            value={this.state.user.title}
             onChange={this.handleChanges}
           />
+          <label htmlFor="country">Country</label>
           <input
+            id="country"
             type="text"
-            name="title"
-            value={this.state.credentials.title}
+            name="country"
+            value={this.state.user.country}
             onChange={this.handleChanges}
           />
           <button>Save</button>
