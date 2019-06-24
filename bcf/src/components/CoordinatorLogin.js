@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import LoginHeader from "./LoginHeader";
+
 class CoordinatorLogin extends Component {
   state = {
     credentials: {
@@ -31,29 +33,32 @@ class CoordinatorLogin extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.login}>
-          <h2>Welcome Back</h2>
-          <p>Username</p>
-          <input
-            type="text"
-            name="username"
-            value={this.state.credentials.username}
-            onChange={this.handleChanges}
-          />
-          <p>Password</p>
-          <input
-            type="password"
-            name="password"
-            value={this.state.credentials.password}
-            onChange={this.handleChanges}
-          />
-          <a className="forgotPassword" href="/">
-            Forgot your password?
-          </a>
-          <button>Sign In</button>
-        </form>
-      </div>
+      <>
+        <LoginHeader />
+        <div>
+          <form onSubmit={this.login}>
+            <h2>Welcome Back</h2>
+            <p>Username</p>
+            <input
+              type="text"
+              name="username"
+              value={this.state.credentials.username}
+              onChange={this.handleChanges}
+            />
+            <p>Password</p>
+            <input
+              type="password"
+              name="password"
+              value={this.state.credentials.password}
+              onChange={this.handleChanges}
+            />
+            <a className="forgotPassword" href="/">
+              Forgot your password?
+            </a>
+            <button>Sign In</button>
+          </form>
+        </div>
+      </>
     );
   }
 }
