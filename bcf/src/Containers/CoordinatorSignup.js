@@ -37,29 +37,33 @@ class CoordinatorSignup extends Component {
         <div className="coordinator-signup-page">
           <form onSubmit={this.signUp}>
             <h2>Create an Account</h2>
-            <p>First Name</p>
+            <label htmlFor="firstname">First Name</label>
             <input
+              id="firstname"
               type="text"
               name="firstName"
               value={this.state.credentials.firstName}
               onChange={this.handleChanges}
             />
-            <p>Last Name</p>
+            <label htmlFor="lastname">Last Name</label>
             <input
+              id="lastname"
               type="text"
               name="lastName"
               value={this.state.credentials.lastName}
               onChange={this.handleChanges}
             />
-            <p>Username</p>
+            <label htmlFor="username">Username</label>
             <input
+              id="username"
               type="text"
               name="username"
               value={this.state.credentials.username}
               onChange={this.handleChanges}
             />
-            <p>Password</p>
+            <label htmlFor="password">Password</label>
             <input
+              id="password"
               type="password"
               name="password"
               value={this.state.credentials.password}

@@ -35,15 +35,17 @@ class CoordinatorLogin extends Component {
         <div>
           <form onSubmit={this.login}>
             <h2>Welcome Back</h2>
-            <p>Username</p>
+            <label htmlFor="username">Username</label>
             <input
+              id="username"
               type="text"
               name="username"
               value={this.state.credentials.username}
               onChange={this.handleChanges}
             />
-            <p>Password</p>
+            <label htmlFor="password">Password</label>
             <input
+              id="password"
               type="password"
               name="password"
               value={this.state.credentials.password}
