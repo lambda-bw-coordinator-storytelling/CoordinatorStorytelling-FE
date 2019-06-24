@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.scss";
 
-import CoordinatorSignup from "./components/CoordinatorSignup";
+import CoordinatorLogin from "./components/CoordinatorLogin";
 
 function App() {
   return (
     <div className="App">
-      <CoordinatorSignup />
+      <CoordinatorLogin />
     </div>
   );
 }
