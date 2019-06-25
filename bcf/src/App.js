@@ -9,11 +9,13 @@ import "./App.scss";
 // import StoryEdit from "./Containers/StoryEdit";
 import MainHeader from "./FunctionalComponents/MainHeader";
 import Footer from "./FunctionalComponents/Footer";
+import MainStories from "./Containers/MainStories";
 
 function App() {
   return (
     <div className="App">
       <MainHeader />
+      <MainStories />
       <Footer />
     </div>
   );

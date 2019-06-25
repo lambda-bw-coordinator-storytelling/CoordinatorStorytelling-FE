@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CountryDropdown from "../FunctionalComponents/CountryDropdown";
 
 class CoordinatorProfile extends Component {
   state = {
@@ -86,25 +87,8 @@ class CoordinatorProfile extends Component {
             value={this.state.user.country}
             onChange={this.handleChanges}
           >
-            <option value="">Select Country</option>
-            <option value="Bolivia">Bolivia</option>
-            <option value="Brazil">Brazil</option>
-            <option value="Cambodia">Cambodia</option>
-            <option value="Ecuador">Ecuador</option>
-            <option value="El Salvador">El Salvador</option>
-            <option value="Ghana">Ghana</option>
-            <option value="Guatemala">Guatemala</option>
-            <option value="Haiti">Haiti</option>
-            <option value="Honduras">Honduras</option>
-            <option value="Kiribati">Kiribati</option>
-            <option value="Madagascar">Madagascar</option>
-            <option value="Mongolia">Mongolia</option>
-            <option value="Nicaragua">Nicaragua</option>
-            <option value="Paraguay">Paraguay</option>
-            <option value="Peru">Peru</option>
-            <option value="Philippines">Philippines</option>
-            <option value="Sierra Leone">Sierra Leone</option>
-            <option value="Zimbabwe">Zimbabwe</option>
+            <option value="">Country</option>
+            <CountryDropdown />
           </select>
           <button>Save</button>
         </form>

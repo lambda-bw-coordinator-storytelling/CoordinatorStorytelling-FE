@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import RecentStories from "../FunctionalComponents/RecentStories";
 import TodaysStories from "../FunctionalComponents/TodaysStories";
-import SavedStories from "../FunctionalComponents/SavedStories";
+import StoriesList from "../FunctionalComponents/StoriesList";
 
 class CoordinatorHome extends Component {
   render() {
@@ -14,8 +14,8 @@ class CoordinatorHome extends Component {
         </div>
         <RecentStories />
         <TodaysStories />
-        <a href="">AddStory</a>
-        <SavedStories />
+        <a href="">Add a Story</a>
+        <StoriesList filterBy="" /> {/* Pass coordinator id as filterBy */}
       </div>
     );
   }
