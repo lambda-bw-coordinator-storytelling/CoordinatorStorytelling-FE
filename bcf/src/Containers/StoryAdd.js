@@ -14,7 +14,7 @@ class StoryAdd extends Component {
   handleChanges = e => {
     this.setState({
       newStory: {
-        ...this.state.newStory,
+        ...this.setState.newStory,
         [e.target.name]: e.target.value
       }
     });

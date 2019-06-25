@@ -5,12 +5,13 @@ import "./App.scss";
 // import CoordinatorSignup from "./Containers/CoordinatorSignup";
 // import CoordinatorHome from "./Containers/CoordinatorHome";
 // import CoordinatorProfile from "./Containers/CoordinatorProfile";
-import StoryAdd from "./Containers/StoryAdd";
+// import StoryAdd from "./Containers/StoryAdd";
+import StoryEdit from "./Containers/StoryEdit";
 
 function App() {
   return (
     <div className="App">
-      <StoryAdd />
+      <StoryEdit />
     </div>
   );
 }
