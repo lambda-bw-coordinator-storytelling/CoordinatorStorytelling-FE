@@ -39,6 +39,7 @@ class MainStories extends Component {
             </select>
           </form>
         </div>
+        <h2>Explore Stories</h2>
         <StoriesList filterBy={this.state.countryFilter} />
         {/* pass country as filterBy */}
         <Footer />
