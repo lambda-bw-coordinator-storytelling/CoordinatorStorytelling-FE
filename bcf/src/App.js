@@ -6,12 +6,15 @@ import "./App.scss";
 // import CoordinatorHome from "./Containers/CoordinatorHome";
 // import CoordinatorProfile from "./Containers/CoordinatorProfile";
 // import StoryAdd from "./Containers/StoryAdd";
-import StoryEdit from "./Containers/StoryEdit";
+// import StoryEdit from "./Containers/StoryEdit";
+import MainHeader from "./FunctionalComponents/MainHeader";
+import Footer from "./FunctionalComponents/Footer";
 
 function App() {
   return (
     <div className="App">
-      <StoryEdit />
+      <MainHeader />
+      <Footer />
     </div>
   );
 }
