@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 import LoginHeader from "../FunctionalComponents/LoginHeader";
 
@@ -29,6 +30,24 @@ class CoordinatorLogin extends Component {
     //     this.props.history.push("/protected");
     //   })
     // );
+
+    const credentials = {
+      username: "admin",
+      password: "password"
+    };
+
+    axios
+      .post(
+        "http://coordinator-storytelling.herokuapp.com/oauth/token",
+        credentials
+      )
+      .then(results => {
+        localStorage.setItem("token", results.data.payload);
+        console.log(results.data.payload);
+      })
+      .catch(err => {
+        console.log("Something went wrong", err);
+      });
   };
 
   render() {
