@@ -2,7 +2,6 @@ import React from "react";
 import "./App.scss";
 
 import CoordinatorLogin from "./Containers/CoordinatorLogin";
-// import CoordinatorSignup from "./Containers/CoordinatorSignup";
 // import MainStories from "./Containers/MainStories";
 // import CoordinatorProfile from "./Containers/CoordinatorProfile";
 

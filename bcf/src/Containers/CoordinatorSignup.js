@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 import LoginHeader from "../FunctionalComponents/LoginHeader";
 
@@ -31,6 +32,28 @@ class CoordinatorSignup extends Component {
     //     this.props.history.push("/protected");
     //   })
     // );
+
+    const testUser = {
+      username: "Harry",
+      password: "password",
+      firstname: "Harry",
+      lastname: "Doe",
+      country: "USA",
+      email: "john@doe.com",
+      title: "owner"
+    };
+
+    axios
+      .post(
+        "http://coordinator-storytelling.herokuapp.com/createnewuser",
+        testUser
+      )
+      .then(results => {
+        console.log("Success!");
+      })
+      .catch(err => {
+        console.log("Something went wrong", err);
+      });
   };
 
   render() {
