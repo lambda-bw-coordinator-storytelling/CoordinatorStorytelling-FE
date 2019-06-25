@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class StoryAdd extends Component {
   state = {
-    user: {
+    newStory: {
       date: "",
       title: "",
       country: "",
@@ -13,44 +13,45 @@ class StoryAdd extends Component {
 
   handleChanges = e => {
     this.setState({
-      user: {
-        ...this.state.user,
+      newStory: {
+        ...this.state.newStory,
         [e.target.name]: e.target.value
       }
     });
-    // console.log(this.state.user);
+    console.log(this.state.newStory);
   };
 
-  handleUpdate = e => {
+  handleAdd = e => {
     e.preventDefault();
-    const updatedProfile = {
-      date: this.state.user.date,
-      title: this.state.user.title,
-      country: this.state.user.country,
-      description: this.state.user.description,
-      content: this.state.user.content
+    const newStory = {
+      date: this.state.newStory.date,
+      title: this.state.newStory.title,
+      country: this.state.newStory.country,
+      description: this.state.newStory.description,
+      content: this.state.newStory.content
     };
-    console.log(updatedProfile);
+    console.log(newStory);
 
-    // this.props.update(
-    //   this.state.user.then(() => {
+    // this.props.addStory(
+    //   this.state.newStory.then(() => {
     //     this.props.history.push("/protected");
     //   })
     // );
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="add-story-page-container">
         <h2>Add Story</h2>
 
-        <form onSubmit={this.handleUpdate}>
+        <form onSubmit={this.handleAdd}>
           <label htmlFor="date">Today's date</label>
           <input
             id="date"
             type="date"
             name="date"
-            value={this.state.user.date}
+            value={this.state.newStory.date}
             onChange={this.handleChanges}
           />
 
@@ -59,7 +60,7 @@ class StoryAdd extends Component {
             id="title"
             type="text"
             name="title"
-            value={this.state.user.title}
+            value={this.state.newStory.title}
             onChange={this.handleChanges}
           />
 
@@ -68,7 +69,7 @@ class StoryAdd extends Component {
             required
             id="country"
             name="country"
-            value={this.state.user.country}
+            value={this.state.newStory.country}
             onChange={this.handleChanges}
           >
             <option value="">Select Country</option>
@@ -97,7 +98,7 @@ class StoryAdd extends Component {
             id="description"
             type="description"
             name="description"
-            value={this.state.user.description}
+            value={this.state.newStory.description}
             onChange={this.handleChanges}
           />
 
@@ -106,7 +107,7 @@ class StoryAdd extends Component {
             id="content"
             type="content"
             name="content"
-            value={this.state.user.content}
+            value={this.state.newStory.content}
             onChange={this.handleChanges}
           />
 
