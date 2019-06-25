@@ -1,7 +1,16 @@
 import React from "react";
 
-const YourStories = () => {
-  return <h2>Your Stories</h2>;
+import MainHeader from "../FunctionalComponents/MainHeader";
+import Footer from "../FunctionalComponents/Footer";
+
+const StoriesList = props => {
+  return (
+    <>
+      <div className="story-cards-container">
+        <div className="story-card" />
+      </div>
+    </>
+  );
 };
 
-export default YourStories;
+export default StoriesList;
