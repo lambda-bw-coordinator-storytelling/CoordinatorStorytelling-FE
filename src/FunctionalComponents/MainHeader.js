@@ -9,9 +9,8 @@ const MainHeader = () => {
         <div className="logo-image" href="" />
         <h2 className="logo-text">BCF</h2>
       </div>
-      <a href="">Stories</a>
-      <a href="">Coordinator Login</a>
-      <a href="">Coordinator Sign Up</a>
+      <a href="/login">Coordinator Login</a>
+      <a href="/signup">Coordinator Sign Up</a>
     </div>
   );
 };
