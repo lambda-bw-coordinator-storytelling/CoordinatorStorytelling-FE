@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import LoginHeader from "../FunctionalComponents/LoginHeader";
+
 class CoordinatorSignup extends Component {
   state = {
     user: {
@@ -35,6 +37,7 @@ class CoordinatorSignup extends Component {
     return (
       <>
         <div className="coordinator-signup-page-container">
+          <LoginHeader />
           <form onSubmit={this.handleSignup}>
             <h2>Create an Account</h2>
             <label htmlFor="firstname">First Name</label>
@@ -69,7 +72,7 @@ class CoordinatorSignup extends Component {
               value={this.state.user.password}
               onChange={this.handleChanges}
             />
-            <button>Sign In</button>
+            <button>Sign Up</button>
           </form>
         </div>
       </>
