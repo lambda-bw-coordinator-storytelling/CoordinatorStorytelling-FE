@@ -1,3 +1,5 @@
+// This header for display when a user is NOT logged in.
+
 import React from "react";
 
 const MainHeader = () => {

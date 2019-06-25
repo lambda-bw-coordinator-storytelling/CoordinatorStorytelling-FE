@@ -1,3 +1,5 @@
+// This header for display when a user IS logged in.
+
 import React from "react";
 
 const CoordinatorHeader = () => {
