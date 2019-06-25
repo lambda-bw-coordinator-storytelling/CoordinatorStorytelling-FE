@@ -1,15 +1,24 @@
 import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./App.scss";
 
+import MainHeader from "./FunctionalComponents/MainHeader";
+import Footer from "./FunctionalComponents/Footer";
+import MainStories from "./Containers/MainStories";
 import CoordinatorLogin from "./Containers/CoordinatorLogin";
-// import MainStories from "./Containers/MainStories";
-// import CoordinatorProfile from "./Containers/CoordinatorProfile";
+import CoordinatorSignup from "./Containers/CoordinatorSignup";
 
 function App() {
   return (
-    <div className="App">
-      <CoordinatorLogin />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <MainHeader />
+        <Route exact path="/" component={MainStories} />
+        <Route path="/login" component={CoordinatorLogin} />
+        <Route path="/signup" component={CoordinatorSignup} />
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

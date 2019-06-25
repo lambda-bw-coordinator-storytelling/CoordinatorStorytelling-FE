@@ -1,6 +1,7 @@
 // This header for display when a user is NOT logged in.
 
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const MainHeader = () => {
   return (
@@ -9,9 +10,9 @@ const MainHeader = () => {
         <div className="logo-image" href="" />
         <h2 className="logo-text">BCF</h2>
       </div>
-      <a href="">Stories</a>
-      <a href="">Coordinator Login</a>
-      <a href="">Coordinator Sign Up</a>
+      <NavLink to="/">Stories</NavLink>
+      <NavLink to="/login">Coordinator Login</NavLink>
+      <NavLink to="/signup">Coordinator Sign Up</NavLink>
     </div>
   );
 };
