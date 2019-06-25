@@ -5,8 +5,8 @@ import LoginHeader from "../FunctionalComponents/LoginHeader";
 
 class CoordinatorLogin extends Component {
   state = {
-    user: {
-      email: "",
+    credentials: {
+      username: "",
       password: ""
     }
   };
@@ -14,8 +14,8 @@ class CoordinatorLogin extends Component {
   handleChanges = e => {
     console.log(e.target.value);
     this.setState({
-      user: {
-        ...this.state.user,
+      credentials: {
+        ...this.state.credentials,
         [e.target.name]: e.target.value
       }
     });
@@ -23,32 +23,35 @@ class CoordinatorLogin extends Component {
 
   handleLogin = e => {
     e.preventDefault();
-    console.log("In handleLogin function.");
 
-    // this.props.login(
-    //   this.state.user.then(() => {
-    //     this.props.history.push("/protected");
-    //   })
-    // );
+    const credentials = {
+      username: this.state.credentials.username,
+      password: this.state.credentials.password
+    };
 
-    var axios = require("axios");
+    const body = `grant_type=password&username=${
+      credentials.username
+    }&password=${credentials.password}`;
 
     axios
-      .request({
-        url: "/oauth/token",
-        method: "post",
-        baseURL: "http://coordinator-storytelling.herokuapp.com/",
-        auth: {
-          username: "admin",
-          password: "password"
-        },
-        data: {
-          grant_type: "client_credentials",
-          scope: "public"
+      .post("http://coordinator-storytelling.herokuapp.com/oauth/token", body, {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          Authorization: `Basic ${window.btoa("lambda-client:lambda-secret")}`
         }
       })
       .then(function(res) {
-        console.log(res);
+        console.log(res.data.access_token);
+        localStorage.setItem("token", res.data.access_token);
+        this.setState = {
+          credentials: {
+            username: "",
+            password: ""
+          }
+        };
+      })
+      .catch(function(err) {
+        console.log("There was an error: ", err);
       });
   };
 
@@ -61,10 +64,10 @@ class CoordinatorLogin extends Component {
             <h2>Welcome Back</h2>
             <label htmlFor="email">Username</label>
             <input
-              id="email"
-              type="email"
-              name="email"
-              value={this.state.user.email}
+              id="username"
+              type="text"
+              name="username"
+              value={this.state.credentials.email}
               onChange={this.handleChanges}
             />
             <label htmlFor="password">Password</label>
@@ -72,7 +75,7 @@ class CoordinatorLogin extends Component {
               id="password"
               type="password"
               name="password"
-              value={this.state.user.password}
+              value={this.state.credentials.password}
               onChange={this.handleChanges}
             />
             <a className="forgotPassword" href="/">
