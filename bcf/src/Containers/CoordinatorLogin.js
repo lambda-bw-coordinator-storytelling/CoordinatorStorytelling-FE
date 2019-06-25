@@ -43,12 +43,6 @@ class CoordinatorLogin extends Component {
       .then(function(res) {
         console.log(res.data.access_token);
         localStorage.setItem("token", res.data.access_token);
-        this.setState = {
-          credentials: {
-            username: "",
-            password: ""
-          }
-        };
       })
       .catch(function(err) {
         console.log("There was an error: ", err);
