@@ -11,8 +11,9 @@ class MainStories extends Component {
   };
 
   setFilter = e => {
+    const newCountry = e.target.value;
     this.setState({
-      countryFilter: e.target.value
+      countryFilter: newCountry
     });
   };
 
@@ -25,11 +26,10 @@ class MainStories extends Component {
         </div>
         <RecentStories />
         <TodaysStories />
-        <a href="">Add a Story</a>
         <div className="country-filter-container">
-          <form>
-            <select required id="country" name="country" value="" onChange="">
-              <option value="all">Select Country</option>
+          <form onChange={this.setFilter}>
+            <select required id="country" name="country">
+              <option>Select Country</option>
               <CountryDropdown />
             </select>
           </form>
