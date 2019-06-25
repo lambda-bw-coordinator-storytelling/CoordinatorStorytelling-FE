@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-import MainHeader from "../FunctionalComponents/MainHeader";
-
 class CoordinatorSignup extends Component {
   state = {
     user: {
@@ -60,7 +58,6 @@ class CoordinatorSignup extends Component {
     return (
       <>
         <div className="coordinator-signup-page-container">
-          <MainHeader />
           <form onSubmit={this.handleSignup}>
             <h2>Create an Account</h2>
             <label htmlFor="firstname">First Name</label>
