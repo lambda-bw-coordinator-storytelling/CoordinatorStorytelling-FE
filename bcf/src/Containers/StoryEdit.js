@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+import CoordinatorHeader from "../FunctionalComponents/CoordinatorHeader";
+import Footer from "../FunctionalComponents/Footer";
+import CountryDropdown from "../FunctionalComponents/CountryDropdown";
+
 class StoryEdit extends Component {
   state = {
     activeStory: {
@@ -45,6 +49,7 @@ class StoryEdit extends Component {
     console.log(this.state);
     return (
       <div className="edit-story-page-container">
+        <CoordinatorHeader />
         <h2>Edit Story</h2>
 
         <form onSubmit={this.handleEdit}>
@@ -75,24 +80,7 @@ class StoryEdit extends Component {
             onChange={this.handleChanges}
           >
             <option value="">Select Country</option>
-            <option value="Bolivia">Bolivia</option>
-            <option value="Brazil">Brazil</option>
-            <option value="Cambodia">Cambodia</option>
-            <option value="Ecuador">Ecuador</option>
-            <option value="El Salvador">El Salvador</option>
-            <option value="Ghana">Ghana</option>
-            <option value="Guatemala">Guatemala</option>
-            <option value="Haiti">Haiti</option>
-            <option value="Honduras">Honduras</option>
-            <option value="Kiribati">Kiribati</option>
-            <option value="Madagascar">Madagascar</option>
-            <option value="Mongolia">Mongolia</option>
-            <option value="Nicaragua">Nicaragua</option>
-            <option value="Paraguay">Paraguay</option>
-            <option value="Peru">Peru</option>
-            <option value="Philippines">Philippines</option>
-            <option value="Sierra Leone">Sierra Leone</option>
-            <option value="Zimbabwe">Zimbabwe</option>
+            <CountryDropdown />
           </select>
 
           <label htmlFor="description">Story Description</label>
@@ -115,6 +103,7 @@ class StoryEdit extends Component {
 
           <button>Submit Story</button>
         </form>
+        <Footer />
       </div>
     );
   }

@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+
+import CoordinatorHeader from "../FunctionalComponents/CoordinatorHeader";
+import Footer from "../FunctionalComponents/Footer";
 import CountryDropdown from "../FunctionalComponents/CountryDropdown";
 
 class CoordinatorProfile extends Component {
@@ -43,6 +46,7 @@ class CoordinatorProfile extends Component {
   render() {
     return (
       <div className="coordinator-profile-page-container">
+        <CoordinatorHeader />
         <h2>Your Profile</h2>
 
         <form onSubmit={this.handleUpdate}>
@@ -92,6 +96,7 @@ class CoordinatorProfile extends Component {
           </select>
           <button>Save</button>
         </form>
+        <Footer />
       </div>
     );
   }
