@@ -43,7 +43,6 @@ class CoordinatorProfile extends Component {
     return (
       <div className="coordinator-profile-page-container">
         <h2>Your Profile</h2>
-        <div className="upload-profile-pic">Upload profile picture</div>
 
         <form onSubmit={this.handleUpdate}>
           <h2>Create an Account</h2>
@@ -80,13 +79,33 @@ class CoordinatorProfile extends Component {
             onChange={this.handleChanges}
           />
           <label htmlFor="country">Country</label>
-          <input
+          <select
+            required
             id="country"
-            type="text"
             name="country"
             value={this.state.user.country}
             onChange={this.handleChanges}
-          />
+          >
+            <option value="">Select Country</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Cambodia">Cambodia</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="El Salvador">El Salvador</option>
+            <option value="Ghana">Ghana</option>
+            <option value="Guatemala">Guatemala</option>
+            <option value="Haiti">Haiti</option>
+            <option value="Honduras">Honduras</option>
+            <option value="Kiribati">Kiribati</option>
+            <option value="Madagascar">Madagascar</option>
+            <option value="Mongolia">Mongolia</option>
+            <option value="Nicaragua">Nicaragua</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Peru">Peru</option>
+            <option value="Philippines">Philippines</option>
+            <option value="Sierra Leone">Sierra Leone</option>
+            <option value="Zimbabwe">Zimbabwe</option>
+          </select>
           <button>Save</button>
         </form>
       </div>
