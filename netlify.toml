@@ -1,0 +1,11 @@
+[build]
+ command = "npm build"
+ functions = "functions"
+ publish = "bcf/build"
+ base = "bcf"
+
+
+ [[redirects]]
+   from = "/*"
+   to = "/index.html"
+   status = 200
