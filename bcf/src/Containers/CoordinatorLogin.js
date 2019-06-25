@@ -31,22 +31,24 @@ class CoordinatorLogin extends Component {
     //   })
     // );
 
-    const credentials = {
-      username: "admin",
-      password: "password"
-    };
+    var axios = require("axios");
 
     axios
-      .post(
-        "http://coordinator-storytelling.herokuapp.com/oauth/token",
-        credentials
-      )
-      .then(results => {
-        localStorage.setItem("token", results.data.payload);
-        console.log(results.data.payload);
+      .request({
+        url: "/oauth/token",
+        method: "post",
+        baseURL: "http://coordinator-storytelling.herokuapp.com/",
+        auth: {
+          username: "admin",
+          password: "password"
+        },
+        data: {
+          grant_type: "client_credentials",
+          scope: "public"
+        }
       })
-      .catch(err => {
-        console.log("Something went wrong", err);
+      .then(function(res) {
+        console.log(res);
       });
   };
 
