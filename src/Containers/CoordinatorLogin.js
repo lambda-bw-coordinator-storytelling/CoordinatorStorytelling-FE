@@ -10,7 +10,6 @@ class CoordinatorLogin extends Component {
   };
 
   handleChanges = e => {
-    console.log(e.target.value);
     this.setState({
       credentials: {
         ...this.state.credentials,
@@ -42,8 +41,9 @@ class CoordinatorLogin extends Component {
         console.log(res.data.access_token);
         localStorage.setItem("token", res.data.access_token);
       })
-      .catch(function(err) {
-        console.log("There was an error: ", err);
+      .then(this.props.history.push("/protected"))
+      .catch(function() {
+        console.log("There was an error: ");
       });
   };
 
