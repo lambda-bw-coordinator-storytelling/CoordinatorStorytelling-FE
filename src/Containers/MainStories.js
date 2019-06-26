@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import RecentStories from "../FunctionalComponents/RecentStories";
 import TodaysStories from "../FunctionalComponents/TodaysStories";
-import CountryDropdown from "./CountryDropdown";
+import CountryDropdown from "../Helpers/CountryDropdown";
 import StoriesList from "../FunctionalComponents/StoriesList";
 
 class MainStories extends Component {

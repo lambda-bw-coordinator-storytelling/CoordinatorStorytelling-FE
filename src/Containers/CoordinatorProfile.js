@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import CoordinatorHeader from "../FunctionalComponents/CoordinatorHeader";
 import Footer from "../FunctionalComponents/Footer";
-import CountryDropdown from "../FunctionalComponents/CountryDropdown";
+import CountryDropdown from "../Helpers/CountryDropdown";
 
 class CoordinatorProfile extends Component {
   state = {

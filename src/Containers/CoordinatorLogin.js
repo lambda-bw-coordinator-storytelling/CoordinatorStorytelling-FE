@@ -37,11 +37,13 @@ class CoordinatorLogin extends Component {
           Authorization: `Basic ${window.btoa("lambda-client:lambda-secret")}`
         }
       })
+
       .then(function(res) {
         console.log(res.data.access_token);
         localStorage.setItem("token", res.data.access_token);
       })
       .then(this.props.history.push("/protected"))
+
       .catch(function() {
         console.log("There was an error: ");
       });
