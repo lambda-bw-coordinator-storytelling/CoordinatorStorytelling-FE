@@ -50,8 +50,8 @@ class CoordinatorSignup extends Component {
         "http://coordinator-storytelling.herokuapp.com/createnewuser",
         newUser
       )
-      .then(results => {
-        console.log("Success!");
+      .then(res => {
+        console.log("Success! ", res);
         this.props.history.push("/login");
       })
       .catch(err => {

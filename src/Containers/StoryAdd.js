@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 import NavBar from "../FunctionalComponents/NavBar";
 import Footer from "../FunctionalComponents/Footer";
@@ -18,7 +19,7 @@ class StoryAdd extends Component {
   handleChanges = e => {
     this.setState({
       newStory: {
-        ...this.setState.newStory,
+        ...this.state.newStory,
         [e.target.name]: e.target.value
       }
     });
@@ -27,12 +28,31 @@ class StoryAdd extends Component {
   handleAdd = e => {
     e.preventDefault();
     const newStory = {
-      date: this.state.newStory.date,
       title: this.state.newStory.title,
       country: this.state.newStory.country,
       description: this.state.newStory.description,
-      content: this.state.newStory.content
+      content: this.state.newStory.content,
+      date: this.state.newStory.date
     };
+    console.log(newStory);
+
+    axios
+      .post(
+        "http://coordinator-storytelling.herokuapp.com/stories/story",
+        newStory,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        }
+      )
+
+      .then(res => {
+        console.log(res);
+        console.log("Story added: ", res.data);
+      })
+
+      .catch(function(res) {
+        console.log("There was an error: ", res.data);
+      });
   };
 
   render() {
