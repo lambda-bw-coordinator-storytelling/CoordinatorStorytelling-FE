@@ -5,7 +5,15 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 
 class ViewStory extends Component {
+  state = {
+    id: null
+  };
+
   componentDidMount() {
+    console.log("This.prop is: ", this.props);
+
+    let storyid = this.props.match.params.id;
+
     // const { story } = this.props.location.state;
     // this.setState(() => ({ story: story.data }));
     // console.log(this.state);
