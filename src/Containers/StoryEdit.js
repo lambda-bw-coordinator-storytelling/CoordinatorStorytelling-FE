@@ -1,19 +1,15 @@
 import React, { Component } from "react";
-
-import NavBar from "../FunctionalComponents/NavBar";
-import Footer from "../FunctionalComponents/Footer";
+import axios from "axios";
 import CountryDropdown from "../Helpers/CountryDropdown";
 
 class StoryEdit extends Component {
   state = {
     activeStory: {
-      date: "06/15/19",
-      title: "Magna minim incididunt nisi laborum do voluptate.",
-      country: "Bolivia",
-      description:
-        "Elit deserunt nulla est consectetur mollit aliquip non nostrud qui velit aute. Sunt reprehenderit adipisicing labore elit irure non deserunt excepteur aute deserunt excepteur.",
-      content:
-        "Eiusmod irure nulla exercitation consectetur laboris proident commodo incididunt incididunt tempor quis cillum anim. Est eu anim non pariatur ut ut in pariatur id dolor nostrud. Irure proident dolor consectetur fugiat ut eu laboris ut consequat. Sit excepteur incididunt est amet fugiat. Excepteur est in eu elit magna ullamco do esse. Adipisicing consectetur incididunt consectetur labore sunt enim enim eiusmod exercitation."
+      date: "",
+      title: "",
+      country: "",
+      description: "",
+      content: ""
     }
   };
 
@@ -49,7 +45,6 @@ class StoryEdit extends Component {
     console.log(this.state);
     return (
       <div className="edit-story-page-container">
-        <NavBar />
         <h2>Edit Story</h2>
 
         <form onSubmit={this.handleEdit}>
@@ -103,7 +98,6 @@ class StoryEdit extends Component {
 
           <button>Submit Story</button>
         </form>
-        <Footer />
       </div>
     );
   }

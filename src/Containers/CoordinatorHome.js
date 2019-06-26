@@ -2,11 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import NavBar from "../FunctionalComponents/NavBar";
-import Footer from "../FunctionalComponents/Footer";
-
 import StoriesList from "../FunctionalComponents/StoriesList";
-import AddStory from "../Containers/StoryAdd";
 
 class CoordinatorHome extends Component {
   state = {
@@ -41,7 +37,6 @@ class CoordinatorHome extends Component {
         <StoriesList country="all" stories={this.state.stories} />
 
         {/* Pass coordinator id as filterBy */}
-        <Footer />
       </div>
     );
   }

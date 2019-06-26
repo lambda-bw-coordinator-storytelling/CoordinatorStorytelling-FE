@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import NavBar from "./NavBar";
-import Footer from "./Footer";
-import StoryEdit from "../Containers/StoryEdit";
-
 class ViewStory extends Component {
   state = {
     story: null,
@@ -44,18 +40,45 @@ class ViewStory extends Component {
     });
   }
 
+  deleteStory = e => {
+    e.preventDefault();
+    alert("Are you sure?");
+
+    let storyid = this.props.match.params.id;
+
+    axios
+      .delete(
+        `http://coordinator-storytelling.herokuapp.com/stories/story/${storyid}`,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        }
+      )
+      .then(res => {
+        console.log("Story Deleted: ", res);
+      })
+
+      .then(this.props.history.push("/admin"))
+
+      .then()
+      .catch(function() {
+        console.log("There was an error: ");
+      });
+  };
+
   render() {
     console.log(localStorage.getItem("token"));
 
     const editButton = (
       <Link
         to={{
-          pathname: `/stories/edit/${this.state.id}`
+          pathname: `/admin/editstory/${this.state.id}`
         }}
       >
         <button>Edit</button>
       </Link>
     );
+
+    const deleteButton = <button onClick={this.deleteStory}>Delete</button>;
 
     const story = this.state.story ? (
       <>
@@ -66,7 +89,8 @@ class ViewStory extends Component {
         <p className="date">{this.state.story.date}</p>
         <div className="story-content-container">
           {this.state.story.content}
-          {this.state.loggedIn === true ? editButton : <p />}
+          {this.state.loggedIn === true ? editButton : <div />}
+          {this.state.loggedIn === true ? deleteButton : <div />}
         </div>
       </>
     ) : (
@@ -75,13 +99,10 @@ class ViewStory extends Component {
 
     return (
       <>
-        <NavBar />
         <div className="click-back-container">
           {/* <Link to=""> &#129120; Back to Stories</Link>*/}
         </div>
         <div className="story-container">{story}</div>
-
-        <Footer />
       </>
     );
   }
