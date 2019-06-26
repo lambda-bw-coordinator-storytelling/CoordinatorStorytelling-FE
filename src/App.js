@@ -35,7 +35,7 @@ function App() {
         <Route
           exact
           path="/stories/:id"
-          render={props => <ViewStory {...props} />}
+          render={props => <ViewStory {...props} props={props} />}
         />
 
         <Footer />

@@ -3,9 +3,17 @@ import { Link } from "react-router-dom";
 
 const Story = props => {
   const { story } = props;
+  // console.log(props);
   return (
     <>
-      <Link to={`/stories/${story.storiesid}`}>
+      <Link
+        to={{
+          pathname: `/stories/${story.storiesid}`,
+          state: {
+            story: { story }
+          }
+        }}
+      >
         <div className="media">
           <img src={story.url} alt={story.title} />
         </div>
