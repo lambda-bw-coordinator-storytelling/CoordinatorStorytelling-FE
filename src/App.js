@@ -8,6 +8,7 @@ import MainStories from "./Containers/MainStories";
 import CoordinatorLogin from "./Containers/CoordinatorLogin";
 import CoordinatorSignup from "./Containers/CoordinatorSignup";
 import CoordinatorHome from "./Containers/CoordinatorHome";
+import ViewStory from "./FunctionalComponents/ViewStory";
 
 function App() {
   return (
@@ -29,6 +30,12 @@ function App() {
           exact
           path="/admin"
           render={props => <CoordinatorHome {...props} />}
+        />
+
+        <Route
+          exact
+          path="/stories/:id"
+          render={props => <ViewStory {...props} />}
         />
 
         <Footer />

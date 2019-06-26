@@ -4,14 +4,6 @@ import Story from "./Story";
 const StoriesList = props => {
   let filteredList = [];
 
-  // if (props.country === "all") {
-  //   filteredList = props.stories;
-  // } else {
-  //   filteredList = props.stories.filter(
-  //     story => story.country === props.country
-  //   );
-  // }
-
   props.country === "all"
     ? (filteredList = props.stories)
     : (filteredList = props.stories.filter(

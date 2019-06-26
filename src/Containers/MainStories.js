@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-// import RecentStories from "../FunctionalComponents/RecentStories";
-// import TodaysStories from "../FunctionalComponents/TodaysStories";
 import CountryDropdown from "../Helpers/CountryDropdown";
 import StoriesList from "../FunctionalComponents/StoriesList";
 
