@@ -52,7 +52,7 @@ class CoordinatorSignup extends Component {
       )
       .then(results => {
         console.log("Success!");
-        this.props.history.push("/admin");
+        this.props.history.push("/login");
       })
       .catch(err => {
         console.log("Something went wrong", err);

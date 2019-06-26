@@ -27,30 +27,16 @@ class CoordinatorHome extends Component {
       .catch(function() {
         console.log("There was an error: ");
       });
-
-    axios
-      .get("http://coordinator-storytelling.herokuapp.com/users/users", {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
-      })
-
-      .then(res => {
-        console.log("Users: ", res.data);
-      })
-
-      .catch(function() {
-        console.log("There was an error: ");
-      });
   }
 
   render() {
     return (
       <div className="coordinator-home-page-container">
-        <NavBar />
         <div className="title-container">
           <div className="title-logo" />
           <h2>The Bountiful Children's Foundation</h2>
         </div>
-        <Link to="">Add a Story</Link>
+        <Link to="admin/addstory">Add a Story</Link>
 
         <StoriesList country="all" stories={this.state.stories} />
 

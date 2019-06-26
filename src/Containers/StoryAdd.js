@@ -7,11 +7,11 @@ import CountryDropdown from "../Helpers/CountryDropdown";
 class StoryAdd extends Component {
   state = {
     newStory: {
-      date: "",
       title: "",
       country: "",
       description: "",
-      content: ""
+      content: "",
+      date: ""
     }
   };
 
@@ -33,13 +33,6 @@ class StoryAdd extends Component {
       description: this.state.newStory.description,
       content: this.state.newStory.content
     };
-    console.log(newStory);
-
-    // this.props.addStory(
-    //   this.state.newStory.then(() => {
-    //     this.props.history.push("/protected");
-    //   })
-    // );
   };
 
   render() {
@@ -49,15 +42,6 @@ class StoryAdd extends Component {
         <h2>Add Story</h2>
 
         <form onSubmit={this.handleAdd}>
-          <label htmlFor="date">Today's date</label>
-          <input
-            id="date"
-            type="date"
-            name="date"
-            value={this.state.newStory.date}
-            onChange={this.handleChanges}
-          />
-
           <label htmlFor="title">Title of Story</label>
           <input
             id="title"
@@ -94,6 +78,15 @@ class StoryAdd extends Component {
             type="content"
             name="content"
             value={this.state.newStory.content}
+            onChange={this.handleChanges}
+          />
+
+          <label htmlFor="date">Today's date</label>
+          <input
+            id="date"
+            type="date"
+            name="date"
+            value={this.state.newStory.date}
             onChange={this.handleChanges}
           />
 

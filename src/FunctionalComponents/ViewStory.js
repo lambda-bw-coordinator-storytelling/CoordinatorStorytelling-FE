@@ -4,6 +4,7 @@ import axios from "axios";
 
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import StoryEdit from "../Containers/StoryEdit";
 
 class ViewStory extends Component {
   state = {
@@ -33,6 +34,7 @@ class ViewStory extends Component {
         });
       })
 
+      .then()
       .catch(function() {
         console.log("There was an error: ");
       });
@@ -45,7 +47,15 @@ class ViewStory extends Component {
   render() {
     console.log(localStorage.getItem("token"));
 
-    const editButton = <button>Edit</button>;
+    const editButton = (
+      <Link
+        to={{
+          pathname: `/stories/edit/${this.state.id}`
+        }}
+      >
+        <button>Edit</button>
+      </Link>
+    );
 
     const story = this.state.story ? (
       <>
@@ -67,7 +77,7 @@ class ViewStory extends Component {
       <>
         <NavBar />
         <div className="click-back-container">
-          <Link to=""> &#129120; Back to Stories</Link>
+          {/* <Link to=""> &#129120; Back to Stories</Link>*/}
         </div>
         <div className="story-container">{story}</div>
 

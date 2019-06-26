@@ -42,13 +42,13 @@ function App() {
 
         <Route
           exact
-          path="/stories/edit/:id"
+          path="admin/editstory/:id"
           render={props => <StoryEdit {...props} />}
         />
 
         <Route
           exact
-          path="/stories/add"
+          path="admin/addstory"
           render={props => <StoryAdd {...props} />}
         />
 
