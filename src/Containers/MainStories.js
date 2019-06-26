@@ -24,9 +24,8 @@ class MainStories extends Component {
       .get("http://coordinator-storytelling.herokuapp.com/stories/all")
 
       .then(res => {
-        this.setState = {
-          stories: res.data
-        };
+        // console.log(res);
+        this.setState(() => ({ stories: res }));
       })
 
       .catch(function() {
@@ -35,6 +34,7 @@ class MainStories extends Component {
   }
 
   render() {
+    // console.log(this.state);
     return (
       <div className="main-stories-page-container">
         <div className="title-container">

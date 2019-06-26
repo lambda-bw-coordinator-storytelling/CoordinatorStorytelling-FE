@@ -1,6 +1,7 @@
 import React from "react";
 
 const StoriesList = props => {
+  console.log(props);
   return (
     <>
       <div className="story-cards-container">
