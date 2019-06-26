@@ -12,7 +12,7 @@ class CoordinatorSignup extends Component {
   };
 
   handleChanges = e => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     this.setState({
       user: {
         ...this.state.user,
@@ -25,29 +25,34 @@ class CoordinatorSignup extends Component {
     e.preventDefault();
     console.log("In create account function.");
 
-    // this.props.signUp(
-    //   this.state.user.then(() => {
-    //     this.props.history.push("/protected");
-    //   })
-    // );
+    // const testUser = {
+    //   username: "Harry",
+    //   password: "password",
+    //   firstname: "Harry",
+    //   lastname: "Doe",
+    //   country: "USA",
+    //   email: "john@doe.com",
+    //   title: "owner"
+    // };
 
-    const testUser = {
-      username: "Harry",
-      password: "password",
-      firstname: "Harry",
-      lastname: "Doe",
-      country: "USA",
-      email: "john@doe.com",
-      title: "owner"
+    const newUser = {
+      username: this.state.user.username,
+      password: this.state.user.password,
+      firstname: this.state.user.firstname,
+      lastname: this.state.user.lastname,
+      country: "all",
+      email: this.state.user.username,
+      title: "admin"
     };
 
     axios
       .post(
         "http://coordinator-storytelling.herokuapp.com/createnewuser",
-        testUser
+        newUser
       )
       .then(results => {
         console.log("Success!");
+        this.props.history.push("/admin");
       })
       .catch(err => {
         console.log("Something went wrong", err);
@@ -76,10 +81,10 @@ class CoordinatorSignup extends Component {
               value={this.state.user.lastname}
               onChange={this.handleChanges}
             />
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">Email</label>
             <input
               id="username"
-              type="text"
+              type="email"
               name="username"
               value={this.state.user.username}
               onChange={this.handleChanges}

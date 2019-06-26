@@ -44,19 +44,19 @@ class CoordinatorLogin extends Component {
     axios
       .post("http://coordinator-storytelling.herokuapp.com/oauth/token", body, {
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          Authorization: `Basic ${window.btoa("lambda-client:lambda-secret")}`
+          Authorization: "Basic bGFtYmRhLWNsaWVudDpsYW1iZGEtc2VjcmV0",
+          "Content-Type": "application/x-www-form-urlencoded"
         }
       })
 
       .then(function(res) {
-        console.log(res.data.access_token);
+        // console.log(res.data.access_token);
         localStorage.setItem("token", res.data.access_token);
       })
       .then(this.props.history.push("/admin"))
 
-      .catch(function() {
-        console.log("There was an error: ");
+      .catch(function(err) {
+        console.log("There was an error: ", err.message);
       });
   };
 
@@ -66,7 +66,7 @@ class CoordinatorLogin extends Component {
         <div className="coordinator-login-page-container">
           <form onSubmit={this.handleLogin}>
             <h2>Welcome Back</h2>
-            <label htmlFor="email">Username</label>
+            <label htmlFor="username">Username</label>
             <input
               id="username"
               type="text"
