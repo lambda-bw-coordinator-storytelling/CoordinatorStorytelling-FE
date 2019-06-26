@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 import RecentStories from "../FunctionalComponents/RecentStories";
 import TodaysStories from "../FunctionalComponents/TodaysStories";
@@ -7,7 +8,8 @@ import StoriesList from "../FunctionalComponents/StoriesList";
 
 class MainStories extends Component {
   state = {
-    countryFilter: "all"
+    countryFilter: "all",
+    stories: []
   };
 
   setFilter = e => {
@@ -16,6 +18,21 @@ class MainStories extends Component {
       countryFilter: newCountry
     });
   };
+
+  componentDidMount() {
+    axios
+      .get("http://coordinator-storytelling.herokuapp.com/stories/all")
+
+      .then(res => {
+        this.setState = {
+          stories: res.data
+        };
+      })
+
+      .catch(function() {
+        console.log("There was an error: ");
+      });
+  }
 
   render() {
     return (
@@ -36,7 +53,10 @@ class MainStories extends Component {
           </form>
         </div>
         <h2>Explore Stories</h2>
-        <StoriesList filterBy={this.state.countryFilter} />
+        <StoriesList
+          filterBy={this.state.countryFilter}
+          stories={this.state.stories}
+        />
         {/* pass country as filterBy */}
       </div>
     );
