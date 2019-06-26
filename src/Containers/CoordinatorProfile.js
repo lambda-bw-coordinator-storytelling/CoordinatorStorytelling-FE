@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import CoordinatorHeader from "../FunctionalComponents/CoordinatorHeader";
+import NavBar from "../FunctionalComponents/NavBar";
 import Footer from "../FunctionalComponents/Footer";
 import CountryDropdown from "../Helpers/CountryDropdown";
 
@@ -46,7 +46,7 @@ class CoordinatorProfile extends Component {
   render() {
     return (
       <div className="coordinator-profile-page-container">
-        <CoordinatorHeader />
+        <NavBar />
         <h2>Your Profile</h2>
 
         <form onSubmit={this.handleUpdate}>

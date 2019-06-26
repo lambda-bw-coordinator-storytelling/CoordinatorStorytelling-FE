@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import CoordinatorHeader from "../FunctionalComponents/CoordinatorHeader";
+import NavBar from "../FunctionalComponents/NavBar";
 import Footer from "../FunctionalComponents/Footer";
 import CountryDropdown from "../Helpers/CountryDropdown";
 
@@ -45,7 +45,7 @@ class StoryAdd extends Component {
   render() {
     return (
       <div className="add-story-page-container">
-        <CoordinatorHeader />
+        <NavBar />
         <h2>Add Story</h2>
 
         <form onSubmit={this.handleAdd}>

@@ -3,6 +3,8 @@ import React from "react";
 const Story = props => {
   const { story } = props;
 
+  console.log(story);
+
   return (
     <>
       <div className="media">

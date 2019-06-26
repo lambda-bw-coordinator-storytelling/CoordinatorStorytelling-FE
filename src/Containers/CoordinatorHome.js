@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import CoordinatorHeader from "../FunctionalComponents/CoordinatorHeader";
+import NavBar from "../FunctionalComponents/NavBar";
 import Footer from "../FunctionalComponents/Footer";
 import RecentStories from "../FunctionalComponents/RecentStories";
 import TodaysStories from "../FunctionalComponents/TodaysStories";
@@ -10,7 +10,7 @@ class CoordinatorHome extends Component {
   render() {
     return (
       <div className="coordinator-home-page-container">
-        <CoordinatorHeader />
+        <NavBar />
         <div className="title-container">
           <div className="title-logo" />
           <h2>The Bountiful Children's Foundation</h2>

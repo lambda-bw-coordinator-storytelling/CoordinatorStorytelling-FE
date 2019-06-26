@@ -1,9 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import { PrivateRoute } from "./Helpers/PrivateRoute";
 import "./App.scss";
 
-import MainHeader from "./FunctionalComponents/MainHeader";
+import MainHeader from "./FunctionalComponents/NavBar";
 import Footer from "./FunctionalComponents/Footer";
 import MainStories from "./Containers/MainStories";
 import CoordinatorLogin from "./Containers/CoordinatorLogin";
@@ -15,10 +14,22 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <MainHeader />
-        <Route exact path="/" component={MainStories} />
-        <Route path="/login" component={CoordinatorLogin} />
-        <Route path="/signup" component={CoordinatorSignup} />
-        <PrivateRoute exact path="/protected" component={CoordinatorHome} />
+        <Route exact path="/" render={props => <MainStories {...props} />} />
+        <Route
+          exact
+          path="/login"
+          render={props => <CoordinatorLogin {...props} />}
+        />
+        <Route
+          exact
+          path="/signup"
+          render={props => <CoordinatorSignup {...props} />}
+        />
+        <Route
+          exact
+          path="/admin"
+          render={props => <CoordinatorHome {...props} />}
+        />
 
         <Footer />
       </div>

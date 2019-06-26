@@ -44,6 +44,7 @@ class MainStories extends Component {
         <RecentStories />
         <TodaysStories />
 */}
+        <h2>Explore Stories</h2>
         <div className="country-filter-container">
           <form onChange={this.setFilter}>
             <select required id="country" name="country">
@@ -53,7 +54,6 @@ class MainStories extends Component {
             </select>
           </form>
         </div>
-        <h2>Explore Stories</h2>
 
         <StoriesList
           country={this.state.countryFilter}

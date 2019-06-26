@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import CoordinatorHeader from "../FunctionalComponents/CoordinatorHeader";
+import NavBar from "../FunctionalComponents/NavBar";
 import Footer from "../FunctionalComponents/Footer";
 import CountryDropdown from "../Helpers/CountryDropdown";
 
@@ -49,7 +49,7 @@ class StoryEdit extends Component {
     console.log(this.state);
     return (
       <div className="edit-story-page-container">
-        <CoordinatorHeader />
+        <NavBar />
         <h2>Edit Story</h2>
 
         <form onSubmit={this.handleEdit}>
