@@ -7,11 +7,23 @@ import Footer from "./Footer";
 
 class ViewStory extends Component {
   state = {
-    story: null
+    story: null,
+    loggedIn: null
   };
+
+  checkAuth() {
+    localStorage.getItem("token")
+      ? this.setState({
+          loggedIn: true
+        })
+      : this.setState({
+          loggedIn: false
+        });
+  }
 
   componentDidMount() {
     let storyid = this.props.match.params.id;
+    this.checkAuth();
 
     axios
       .get(`http://coordinator-storytelling.herokuapp.com/stories/${storyid}`)
@@ -19,8 +31,8 @@ class ViewStory extends Component {
         this.setState({
           story: res.data
         });
-        console.log(this.state.story.title);
       })
+
       .catch(function() {
         console.log("There was an error: ");
       });
@@ -31,7 +43,10 @@ class ViewStory extends Component {
   }
 
   render() {
-    console.log(this.state.story);
+    console.log(localStorage.getItem("token"));
+
+    const editButton = <button>Edit</button>;
+
     const story = this.state.story ? (
       <>
         <div className="title-left-container">
@@ -41,6 +56,7 @@ class ViewStory extends Component {
         <p className="date">{this.state.story.date}</p>
         <div className="story-content-container">
           {this.state.story.content}
+          {this.state.loggedIn === true ? editButton : <p />}
         </div>
       </>
     ) : (

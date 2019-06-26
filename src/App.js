@@ -9,6 +9,8 @@ import CoordinatorLogin from "./Containers/CoordinatorLogin";
 import CoordinatorSignup from "./Containers/CoordinatorSignup";
 import CoordinatorHome from "./Containers/CoordinatorHome";
 import ViewStory from "./FunctionalComponents/ViewStory";
+import StoryEdit from "./Containers/StoryEdit";
+import StoryAdd from "./Containers/StoryAdd";
 
 function App() {
   return (
@@ -36,6 +38,18 @@ function App() {
           exact
           path="/stories/:id"
           render={props => <ViewStory {...props} />}
+        />
+
+        <Route
+          exact
+          path="/stories/edit/:id"
+          render={props => <StoryEdit {...props} />}
+        />
+
+        <Route
+          exact
+          path="/stories/add"
+          render={props => <StoryAdd {...props} />}
         />
 
         <Footer />

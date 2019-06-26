@@ -40,10 +40,7 @@ class MainStories extends Component {
           <div className="title-logo" />
           <h2>The Bountiful Children's Foundation</h2>
         </div>
-        {/*
-        <RecentStories />
-        <TodaysStories />
-*/}
+
         <h2>Explore Stories</h2>
         <div className="country-filter-container">
           <form onChange={this.setFilter}>
@@ -59,8 +56,6 @@ class MainStories extends Component {
           country={this.state.countryFilter}
           stories={this.state.stories}
         />
-
-        {/* pass country as filterBy */}
       </div>
     );
   }

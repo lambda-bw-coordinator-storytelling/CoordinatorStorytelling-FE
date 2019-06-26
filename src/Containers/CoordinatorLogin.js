@@ -6,8 +6,19 @@ class CoordinatorLogin extends Component {
     credentials: {
       username: "",
       password: ""
-    }
+    },
+    loggedIn: null
   };
+
+  checkAuth() {
+    localStorage.getItem("token") != null
+      ? this.setState({
+          logedIn: true
+        })
+      : this.setState({
+          logedIn: false
+        });
+  }
 
   handleChanges = e => {
     this.setState({
@@ -42,7 +53,7 @@ class CoordinatorLogin extends Component {
         console.log(res.data.access_token);
         localStorage.setItem("token", res.data.access_token);
       })
-      .then(this.props.history.push("/protected"))
+      .then(this.props.history.push("/admin"))
 
       .catch(function() {
         console.log("There was an error: ");

@@ -8,10 +8,7 @@ const Story = props => {
     <>
       <Link
         to={{
-          pathname: `/stories/${story.storiesid}`,
-          state: {
-            story: { story }
-          }
+          pathname: `/stories/${story.storiesid}`
         }}
       >
         <div className="media">
