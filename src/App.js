@@ -9,9 +9,6 @@ import MainStories from "./Containers/MainStories";
 import CoordinatorLogin from "./Containers/CoordinatorLogin";
 import CoordinatorSignup from "./Containers/CoordinatorSignup";
 import CoordinatorHome from "./Containers/CoordinatorHome";
-// import CoordinatorProfile from "./Containers/CoordinatorProfile";
-// import StoryAdd from "./Containers/StoryAdd";
-// import StoryEdit from "./Containers/StoryEdit";
 
 function App() {
   return (
