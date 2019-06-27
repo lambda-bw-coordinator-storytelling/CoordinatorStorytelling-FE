@@ -9,18 +9,19 @@
   left: 0;
   width: 100%;
   margin: 0;
-  padding: 0 2%;
+  //   padding: 0 2%;
 
   .logo-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border: 1px solid white;
+    // width: 20%;
 
     .logo-text {
       font-family: "Prompt", sans-serif;
       font-weight: 300;
       width: 50%;
-      padding-left: 10%;
     }
 
     img {
@@ -34,7 +35,7 @@
     text-align: right;
     display: flex;
     justify-content: flex-end;
-    width: 75%;
+    // width: 75%;
     margin-right: 4%;
 
     a {

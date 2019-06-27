@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import "../styles/NavBars.scss";
 
@@ -10,9 +10,9 @@ class NavBarLoggedOut extends Component {
       <div className="navbar-container">
         <div id="top" />
         <div className="logo-container">
-          <NavLink to="/">
+          <Link to="/" className="globe-link">
             <img src="https://i.ibb.co/6Dcfjv4/header-globe.png" alt="globe" />
-          </NavLink>
+          </Link>
           <h2 className="logo-text">BCF</h2>
         </div>
         <div className="header-links">
