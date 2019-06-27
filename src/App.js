@@ -2,7 +2,8 @@ import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import "./App.scss";
 
-import NavBar from "./FunctionalComponents/NavBar";
+import NavBarLoggedOut from "./FunctionalComponents/NavBarLoggedOut";
+import NavBarLoggedIn from "./FunctionalComponents/NavBarLoggedIn";
 import Footer from "./FunctionalComponents/Footer";
 import MainStories from "./Containers/MainStories";
 import CoordinatorLogin from "./Containers/CoordinatorLogin";
@@ -15,9 +16,13 @@ import StoryAdd from "./Containers/StoryAdd";
 function App() {
   return (
     <BrowserRouter>
-      <NavBar />
-
       <div className="App">
+        <Route
+          exact
+          path="/"
+          render={props => <NavBarLoggedOut {...props} />}
+        />
+
         <Route exact path="/" render={props => <MainStories {...props} />} />
         <Route
           exact
@@ -29,6 +34,13 @@ function App() {
           path="/signup"
           render={props => <CoordinatorSignup {...props} />}
         />
+
+        <Route
+          exact
+          path="/user"
+          render={props => <NavBarLoggedIn {...props} />}
+        />
+
         <Route
           exact
           path="/user"

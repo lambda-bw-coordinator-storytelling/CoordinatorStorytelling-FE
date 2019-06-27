@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
-class NavBar extends Component {
+class NavBarLoggedIn extends Component {
+  logout() {
+    localStorage.setItem("token", "");
+  }
+
   render() {
     console.log(this.state);
     return (
@@ -10,12 +14,12 @@ class NavBar extends Component {
           <div className="logo-image" href="" />
           <h2 className="logo-text">BCF</h2>
         </div>
-        <NavLink to="/">Stories</NavLink>
-        <NavLink to="/login">Coordinator Login</NavLink>
-        <NavLink to="/signup">Coordinator Sign Up</NavLink>
+        <NavLink to="/">All Stories</NavLink>
+        <div>Welcome!</div>
+        <button onClick={this.logout}>Log Out</button>
       </div>
     );
   }
 }
 
-export default NavBar;
+export default NavBarLoggedIn;

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import NavBarLoggedOut from "../FunctionalComponents/NavBarLoggedOut";
+
 class CoordinatorLogin extends Component {
   state = {
     credentials: {
@@ -63,6 +65,7 @@ class CoordinatorLogin extends Component {
   render() {
     return (
       <>
+        <NavBarLoggedOut />
         <div className="coordinator-login-page-container">
           <form onSubmit={this.handleLogin}>
             <h2>Please Log In</h2>

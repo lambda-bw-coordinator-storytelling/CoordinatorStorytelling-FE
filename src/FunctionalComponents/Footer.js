@@ -1,5 +1,5 @@
 import React from "react";
-import { longStackSupport } from "q";
+import "../styles/footer.scss";
 
 const Footer = () => {
   function logOut() {
