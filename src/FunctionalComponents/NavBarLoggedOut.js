@@ -9,10 +9,7 @@ class NavBarLoggedOut extends Component {
     return (
       <div className="navbar-container">
         <div className="logo-container">
-          <div
-            className="logo-image"
-            href="https://drive.google.com/file/d/1oRl_mebkczzAJ-J7h9hnsaFKfkKZM7ha/view"
-          />
+          <div className="logo-image" href="" />
           <h2 className="logo-text">BCF</h2>
         </div>
         <div className="header-links">
