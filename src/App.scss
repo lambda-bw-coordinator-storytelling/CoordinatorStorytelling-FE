@@ -17,3 +17,52 @@ body {
     text-decoration: none;
   }
 }
+
+.form-container {
+  width: 50%;
+  max-width: 400px;
+  height: 400px;
+  padding: 5%;
+  margin-bottom: 300px;
+  @media (max-width: 1150px) {
+    margin: 200px 0;
+  }
+
+  @media (max-width: 300px) {
+    width: 95%;
+    margin: 200px;
+  }
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border-radius: 0px 15px;
+  // border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.styled-form {
+  display: flex;
+  flex-direction: column;
+
+  label,
+  button {
+    margin-top: 3%;
+  }
+
+  input {
+    padding: 2%;
+  }
+
+  button {
+    background-color: #538a28;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    padding: 2%;
+    font-size: 1.25rem;
+    font-family: "Rosario";
+    &:hover {
+      background-color: #5ea824;
+    }
+  }
+}

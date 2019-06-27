@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import "../styles/login.scss";
 import GeneralNav from "../FunctionalComponents/GeneralNav";
 import CountryDropdown from "../Helpers/CountryDropdown";
 
@@ -59,63 +59,65 @@ class CoordinatorSignup extends Component {
       <>
         <GeneralNav />
         <div className="coordinator-signup-page-container">
-          <form onSubmit={this.handleSignup}>
-            <h2>Create an Account</h2>
-            <label htmlFor="firstname">First Name</label>
-            <input
-              id="firstname"
-              type="text"
-              name="firstname"
-              value={this.state.user.firstname}
-              onChange={this.handleChanges}
-            />
-            <label htmlFor="lastname">Last Name</label>
-            <input
-              id="lastname"
-              type="text"
-              name="lastname"
-              value={this.state.user.lastname}
-              onChange={this.handleChanges}
-            />
+          <div className="form-container">
+            <form className="styled-form" onSubmit={this.handleSignup}>
+              <h2>Create an Account</h2>
+              <label htmlFor="firstname">First Name</label>
+              <input
+                id="firstname"
+                type="text"
+                name="firstname"
+                value={this.state.user.firstname}
+                onChange={this.handleChanges}
+              />
+              <label htmlFor="lastname">Last Name</label>
+              <input
+                id="lastname"
+                type="text"
+                name="lastname"
+                value={this.state.user.lastname}
+                onChange={this.handleChanges}
+              />
 
-            <label htmlFor="lastname">Company Title</label>
-            <input
-              id="title"
-              type="text"
-              name="title"
-              value={this.state.user.title}
-              onChange={this.handleChanges}
-            />
+              <label htmlFor="lastname">Company Title</label>
+              <input
+                id="title"
+                type="text"
+                name="title"
+                value={this.state.user.title}
+                onChange={this.handleChanges}
+              />
 
-            <label htmlFor="country">Country</label>
-            <select
-              id="country"
-              name="country"
-              value={this.state.user.country}
-              onChange={this.handleChanges}
-            >
-              <option value="">Select Country</option>
-              <CountryDropdown />
-            </select>
+              <label htmlFor="country">Country</label>
+              <select
+                id="country"
+                name="country"
+                value={this.state.user.country}
+                onChange={this.handleChanges}
+              >
+                <option value="">Select Country</option>
+                <CountryDropdown />
+              </select>
 
-            <label htmlFor="username">Email</label>
-            <input
-              id="username"
-              type="email"
-              name="username"
-              value={this.state.user.username}
-              onChange={this.handleChanges}
-            />
-            <label htmlFor="password">Password</label>
-            <input
-              id="password"
-              type="password"
-              name="password"
-              value={this.state.user.password}
-              onChange={this.handleChanges}
-            />
-            <button>Sign Up</button>
-          </form>
+              <label htmlFor="username">Email</label>
+              <input
+                id="username"
+                type="email"
+                name="username"
+                value={this.state.user.username}
+                onChange={this.handleChanges}
+              />
+              <label htmlFor="password">Password</label>
+              <input
+                id="password"
+                type="password"
+                name="password"
+                value={this.state.user.password}
+                onChange={this.handleChanges}
+              />
+              <button>Sign Up</button>
+            </form>
+          </div>
         </div>
       </>
     );

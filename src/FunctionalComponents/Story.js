@@ -13,10 +13,12 @@ const Story = props => {
         <div className="media">
           <img src={story.url} alt={story.title} />
         </div>
-
-        <h3 className="title">{story.title}</h3>
+        <div className="title-bar">
+          <h3>{story.title}</h3>
+          <h4 className="country">{story.country}</h4>
+        </div>
       </Link>
-      <div className="country">{story.country}</div>
+
       <p className="description">{story.description}</p>
     </>
   );

@@ -15,8 +15,8 @@ const StoriesList = props => {
 
   return (
     <>
+      <h2>Explore Stories</h2>
       <div className="story-cards-container">
-        <h2>Explore Stories</h2>
         {filteredList.map(story => {
           return (
             <div className="story-card" key={story.storiesid}>

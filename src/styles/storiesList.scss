@@ -26,7 +26,8 @@
     form {
       display: flex;
       justify-content: flex-end;
-      margin-right: 5%;
+      margin-right: 11%;
+      margin-top: 5%;
       select {
         font-family: "Rosario";
         font-size: 1rem;
@@ -35,6 +36,62 @@
     }
   }
 
+  h2 {
+    margin-left: 11%;
+  }
+
   .story-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .story-card {
+      width: 30%;
+      max-width: 400px;
+      @media (max-width: 500px) {
+        width: 45%;
+      }
+      @media (max-width: 300px) {
+        width: 100%;
+      }
+      margin: 1%;
+      background-color: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      box-sizing: border-box;
+
+      img {
+        width: 100%;
+      }
+
+      .title-bar {
+        width: 96%;
+        padding: 2%;
+        background-color: rgba(0, 0, 0, 0.7);
+        margin-top: -65px;
+        z-index: 2;
+        position: relative;
+
+        h3,
+        h4 {
+          line-height: 1rem;
+          padding: 2% 0;
+          margin: 0;
+        }
+
+        h4 {
+          font-weight: 400;
+        }
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .description {
+        padding: 0 2%;
+        color: black;
+      }
+    }
   }
 }

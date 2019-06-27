@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import GeneralNav from "../FunctionalComponents/GeneralNav";
+import "../styles/login.scss";
 
 class CoordinatorLogin extends Component {
   state = {
@@ -70,29 +71,29 @@ class CoordinatorLogin extends Component {
       <>
         <GeneralNav />
         <div className="coordinator-login-page-container">
-          <form onSubmit={this.handleLogin}>
-            <h2>Please Log In</h2>
-            <label htmlFor="username">Email</label>
-            <input
-              id="username"
-              type="text"
-              name="username"
-              value={this.state.credentials.email}
-              onChange={this.handleChanges}
-            />
-            <label htmlFor="password">Password</label>
-            <input
-              id="password"
-              type="password"
-              name="password"
-              value={this.state.credentials.password}
-              onChange={this.handleChanges}
-            />
-            <a className="forgotPassword" href="/">
-              Forgot your password?
-            </a>
-            <button>Sign In</button>
-          </form>
+          <div className="form-container">
+            <form className="styled-form" onSubmit={this.handleLogin}>
+              <h2>Welcome Back</h2>
+              <label htmlFor="username">Email</label>
+              <input
+                id="username"
+                type="text"
+                name="username"
+                value={this.state.credentials.email}
+                onChange={this.handleChanges}
+              />
+              <label htmlFor="password">Password</label>
+              <input
+                id="password"
+                type="password"
+                name="password"
+                value={this.state.credentials.password}
+                onChange={this.handleChanges}
+              />
+
+              <button>Sign In</button>
+            </form>
+          </div>
         </div>
       </>
     );

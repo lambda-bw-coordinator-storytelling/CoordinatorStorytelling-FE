@@ -87,10 +87,6 @@ class App extends React.Component {
             render={props => <StoryAdd {...props} />}
           />
 
-          <a className="to-top" href="#top">
-            Back to top
-          </a>
-
           <Footer />
         </div>
       </BrowserRouter>
