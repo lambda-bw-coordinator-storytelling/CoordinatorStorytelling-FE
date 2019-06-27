@@ -35,19 +35,19 @@ class MainStories extends Component {
   render() {
     return (
       <div className="main-stories-page-container">
-        <div className="title-container">
+        {/*<div className="title-container">
           <div className="title-logo" />
           <img src="https://i.ibb.co/6Dcfjv4/header-globe.png" alt="globe" />
           <h2>
             The Bountiful
             <br /> Children's Foundation
           </h2>
-        </div>
+    </div>*/}
 
         <div className="country-filter-container">
           <form onChange={this.setFilter}>
             <select required id="country" name="country">
-              <option>Select Country</option>
+              <option>Filter by Country</option>
               <option value="all">All</option>
               <CountryDropdown />
             </select>

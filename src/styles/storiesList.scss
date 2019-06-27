@@ -1,14 +1,20 @@
 .main-stories-page-container {
   width: 100%;
-  padding-top: 10%;
+  padding: 10% 0;
   background-image: url("https://i.ibb.co/JHFdv1b/main-header.jpg");
-  background-position: center;
-
-  @media (max-width: 350px) {
-    padding-top: 10%;
-  }
+  position: center;
 
   .title-container {
+    padding-left: 5%;
+    display: flex;
+    align-items: center;
+    background-color: black;
+
+    img {
+      width: 60px;
+      height: 60px;
+      margin-right: 1%;
+    }
   }
 
   .story-cards-container {
@@ -16,10 +22,17 @@
     margin: 0 auto;
   }
 
-  h2 {
-  }
-
-  .country-vilter-container {
+  .country-filter-container {
+    form {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 5%;
+      select {
+        font-family: "Rosario";
+        font-size: 1rem;
+        padding: 0.5%;
+      }
+    }
   }
 
   .story-cards-container {

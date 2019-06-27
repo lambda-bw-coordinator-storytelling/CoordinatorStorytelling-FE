@@ -17,7 +17,7 @@ class GeneralNav extends Component {
                 alt="globe"
               />
             </Link>
-            <h2 className="logo-text">BCF</h2>
+            <h2 className="logo-text">The Boutiful Children's Foundation</h2>
           </div>
           <div className="header-links">
             <NavLink to="/">All Stories</NavLink>
@@ -37,7 +37,7 @@ class GeneralNav extends Component {
               />
             </Link>
 
-            <h2 className="logo-text">BCF</h2>
+            <h2 className="logo-text">The Boutiful Children's Foundation</h2>
           </div>
           <div className="header-links">
             <NavLink to="/">Stories</NavLink>
