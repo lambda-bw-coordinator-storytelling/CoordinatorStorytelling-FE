@@ -1,0 +1,28 @@
+.footer-container {
+  background-color: #010d04;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+
+  p {
+    line-height: 0;
+    padding: 0 2%;
+  }
+
+  .logo-text {
+    font-family: "Prompt", sans-serif;
+    font-size: 2rem;
+    color: #fcfcfc;
+  }
+  .copyright {
+    font-family: "Rosario", sans-serif;
+    font-size: 1rem;
+    color: #7c847e;
+  }
+}

@@ -17,6 +17,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <div id="top" />
         <Route
           exact
           path="/"
@@ -64,6 +65,10 @@ function App() {
           path="/user/addstory"
           render={props => <StoryAdd {...props} />}
         />
+
+        <a className="to-top" href="#top">
+          Back to top
+        </a>
 
         <Footer />
       </div>

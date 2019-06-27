@@ -1,6 +1,18 @@
-html,
+// FONT FAMILIES
+// "Rosario", sans-serif;
+// "Roboto", sans-serif;
+// "Prompt", sans-serif;
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: border-box;
-  $primary-font: "Rosario", sans-serif;
-  $secondary-font: "Roboto", sans-serif;
+  padding-bottom: 75px;
+  font-family: "Rosario", "Roboto", "Prompt", sans-serif;
+
+  .to-top {
+    text-decoration: none;
+  }
 }
