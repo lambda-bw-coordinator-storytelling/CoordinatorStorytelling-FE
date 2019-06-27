@@ -49,7 +49,7 @@ class StoryAdd extends Component {
         console.log("Story added: ", res.data);
       })
 
-      .then(this.props.history.push("/admin"))
+      .then(this.props.history.push("/user"))
 
       .catch(function(res) {
         console.log("There was an error: ", res.data);

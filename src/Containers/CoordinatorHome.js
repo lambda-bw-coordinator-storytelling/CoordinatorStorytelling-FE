@@ -32,7 +32,7 @@ class CoordinatorHome extends Component {
           <div className="title-logo" />
           <h2>The Bountiful Children's Foundation</h2>
         </div>
-        <Link to="admin/addstory">Add a Story</Link>
+        <Link to="user/addstory">Add a Story</Link>
 
         <StoriesList country="all" stories={this.state.stories} />
 

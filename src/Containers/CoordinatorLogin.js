@@ -53,7 +53,7 @@ class CoordinatorLogin extends Component {
         // console.log(res.data.access_token);
         localStorage.setItem("token", res.data.access_token);
       })
-      .then(this.props.history.push("/admin"))
+      .then(this.props.history.push("/user"))
 
       .catch(function(err) {
         console.log("There was an error: ", err.message);
@@ -65,8 +65,8 @@ class CoordinatorLogin extends Component {
       <>
         <div className="coordinator-login-page-container">
           <form onSubmit={this.handleLogin}>
-            <h2>Welcome Back</h2>
-            <label htmlFor="username">Username</label>
+            <h2>Please Log In</h2>
+            <label htmlFor="username">Email</label>
             <input
               id="username"
               type="text"

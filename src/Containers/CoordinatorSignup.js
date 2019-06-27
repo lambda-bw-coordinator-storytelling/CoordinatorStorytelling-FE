@@ -32,7 +32,7 @@ class CoordinatorSignup extends Component {
       lastname: this.state.user.lastname,
       country: "all",
       email: this.state.user.username,
-      title: "admin"
+      title: "Coordinator"
     };
 
     axios

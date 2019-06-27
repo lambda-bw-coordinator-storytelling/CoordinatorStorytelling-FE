@@ -57,7 +57,7 @@ class ViewStory extends Component {
         console.log("Story Deleted: ", res);
       })
 
-      .then(this.props.history.push("/admin"))
+      .then(this.props.history.push("/user"))
 
       .then()
       .catch(function() {
@@ -71,7 +71,7 @@ class ViewStory extends Component {
     const editButton = (
       <Link
         to={{
-          pathname: `/admin/editstory/${this.state.id}`
+          pathname: `/user/editstory/${this.state.id}`
         }}
       >
         <button>Edit</button>

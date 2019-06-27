@@ -1,6 +1,10 @@
 import React from "react";
+import { longStackSupport } from "q";
 
 const Footer = () => {
+  function logOut() {
+    localStorage.setItem("token", "");
+  }
   return (
     <>
       <div className="footer-container">
@@ -8,7 +12,9 @@ const Footer = () => {
         <p className="copyright">
           Copyright {"\u00A9"} 2019. All rights reserved.
         </p>
-        <a href="">Privacy Policy</a>
+        <div className="logOut" onClick={logOut}>
+          Log Out
+        </div>
       </div>
     </>
   );
