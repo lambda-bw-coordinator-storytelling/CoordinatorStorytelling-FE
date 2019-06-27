@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "../styles/login.scss";
+import "../styles/signup.scss";
 import GeneralNav from "../FunctionalComponents/GeneralNav";
 import CountryDropdown from "../Helpers/CountryDropdown";
 

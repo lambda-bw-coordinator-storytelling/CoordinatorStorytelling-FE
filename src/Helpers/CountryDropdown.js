@@ -6,6 +6,7 @@ const CountryDropdown = () => {
       <option value="Bolivia">Bolivia</option>
       <option value="Brazil">Brazil</option>
       <option value="Cambodia">Cambodia</option>
+      <option value="Columbia">Columbia</option>
       <option value="Ecuador">Ecuador</option>
       <option value="El Salvador">El Salvador</option>
       <option value="Ghana">Ghana</option>
