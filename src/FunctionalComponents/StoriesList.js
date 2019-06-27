@@ -1,37 +1,25 @@
 import React from "react";
+import Story from "./Story";
 
 const StoriesList = props => {
+  let filteredList = [];
+
+  props.country === "all"
+    ? (filteredList = props.stories)
+    : (filteredList = props.stories.filter(
+        story => story.country === props.country
+      ));
+
   return (
     <>
       <div className="story-cards-container">
-        <div className="story-card">
-          <h3 className="title">Title</h3>
-          <div className="country">Country</div>
-          <p className="description">
-            Laborum nisi velit eiusmod velit duis aliquip eu amet nulla.
-          </p>
-        </div>
-        <div className="story-card">
-          <h3 className="title">Title</h3>
-          <div className="country">Country</div>
-          <p className="description">
-            Laborum nisi velit eiusmod velit duis aliquip eu amet nulla.
-          </p>
-        </div>
-        <div className="story-card">
-          <h3 className="title">Title</h3>
-          <div className="country">Country</div>
-          <p className="description">
-            Laborum nisi velit eiusmod velit duis aliquip eu amet nulla.
-          </p>
-        </div>
-        <div className="story-card">
-          <h3 className="title">Title</h3>
-          <div className="country">Country</div>
-          <p className="description">
-            Laborum nisi velit eiusmod velit duis aliquip eu amet nulla.
-          </p>
-        </div>
+        {filteredList.map(story => {
+          return (
+            <div className="story-card" key={story.storiesid}>
+              <Story story={story} />
+            </div>
+          );
+        })}
       </div>
     </>
   );
