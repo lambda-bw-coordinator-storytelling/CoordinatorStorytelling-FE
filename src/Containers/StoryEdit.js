@@ -9,7 +9,8 @@ class StoryEdit extends Component {
       title: "",
       country: "",
       description: "",
-      content: ""
+      content: "",
+      url: ""
     }
   };
 
@@ -25,7 +26,12 @@ class StoryEdit extends Component {
   handleEdit = e => {
     e.preventDefault();
     const editedStory = {
-      title: this.state.activeStory.title
+      date: this.state.activeStory.date,
+      title: this.state.activeStory.title,
+      country: this.state.activeStory.country,
+      description: this.state.activeStory.description,
+      content: this.state.activeStory.content,
+      url: this.state.activeStory.url
     };
 
     console.log("Edited story: ", editedStory);
@@ -77,10 +83,11 @@ class StoryEdit extends Component {
         <h2>Edit Story</h2>
 
         <form onSubmit={this.handleEdit}>
+          <></>
           <label htmlFor="date">Date</label>
           <input
             id="date"
-            type="text"
+            type="date"
             name="date"
             value={this.state.activeStory.date}
             onChange={this.handleChanges}
@@ -95,7 +102,7 @@ class StoryEdit extends Component {
             onChange={this.handleChanges}
           />
 
-          <label htmlFor="country">Country Origin of Story</label>
+          <label htmlFor="country">Country</label>
           <select
             required
             id="country"
@@ -107,7 +114,7 @@ class StoryEdit extends Component {
             <CountryDropdown />
           </select>
 
-          <label htmlFor="description">Story Description</label>
+          <label htmlFor="description">Description</label>
           <input
             id="description"
             type="description"
@@ -116,12 +123,21 @@ class StoryEdit extends Component {
             onChange={this.handleChanges}
           />
 
-          <label htmlFor="content">Add Story Content</label>
+          <label htmlFor="content">Content</label>
           <input
             id="content"
             type="content"
             name="content"
             value={this.state.activeStory.content}
+            onChange={this.handleChanges}
+          />
+
+          <label htmlFor="url">Image URL</label>
+          <input
+            id="url"
+            type="text"
+            name="url"
+            value={this.state.activeStory.url}
             onChange={this.handleChanges}
           />
 

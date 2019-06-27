@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-import NavBar from "../FunctionalComponents/NavBar";
-import Footer from "../FunctionalComponents/Footer";
 import CountryDropdown from "../Helpers/CountryDropdown";
 
 class StoryAdd extends Component {
   state = {
     newStory: {
+      date: "",
       title: "",
       country: "",
       description: "",
       content: "",
-      date: ""
+      url: ""
     }
   };
 
@@ -60,10 +59,19 @@ class StoryAdd extends Component {
   render() {
     return (
       <div className="add-story-page-container">
-        <NavBar />
         <h2>Add Story</h2>
 
         <form onSubmit={this.handleAdd}>
+          <></>
+          <label htmlFor="date">Date</label>
+          <input
+            id="date"
+            type="date"
+            name="date"
+            value={this.state.newStory.date}
+            onChange={this.handleChanges}
+          />
+
           <label htmlFor="title">Title of Story</label>
           <input
             id="title"
@@ -73,7 +81,7 @@ class StoryAdd extends Component {
             onChange={this.handleChanges}
           />
 
-          <label htmlFor="country">Country Origin of Story</label>
+          <label htmlFor="country">Country of Story</label>
           <select
             required
             id="country"
@@ -94,7 +102,7 @@ class StoryAdd extends Component {
             onChange={this.handleChanges}
           />
 
-          <label htmlFor="content">Add Story Content</label>
+          <label htmlFor="content">Story Content</label>
           <input
             id="content"
             type="content"
@@ -103,18 +111,17 @@ class StoryAdd extends Component {
             onChange={this.handleChanges}
           />
 
-          <label htmlFor="date">Today's date</label>
+          <label htmlFor="url">Image URL</label>
           <input
-            id="date"
-            type="date"
-            name="date"
-            value={this.state.newStory.date}
+            id="url"
+            type="text"
+            name="url"
+            value={this.state.newStory.url}
             onChange={this.handleChanges}
           />
 
           <button>Submit Story</button>
         </form>
-        <Footer />
       </div>
     );
   }

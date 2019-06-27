@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const Story = props => {
   const { story } = props;
-  // console.log(props);
   return (
     <>
       <Link
