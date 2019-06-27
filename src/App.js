@@ -17,7 +17,6 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <div id="top" />
         <Route
           exact
           path="/"

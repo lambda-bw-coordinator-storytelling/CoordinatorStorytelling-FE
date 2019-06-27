@@ -8,8 +8,11 @@ class NavBarLoggedOut extends Component {
     console.log(this.state);
     return (
       <div className="navbar-container">
+        <div id="top" />
         <div className="logo-container">
-          <div className="logo-image" href="" />
+          <NavLink to="/">
+            <img src="https://i.ibb.co/6Dcfjv4/header-globe.png" alt="globe" />
+          </NavLink>
           <h2 className="logo-text">BCF</h2>
         </div>
         <div className="header-links">
