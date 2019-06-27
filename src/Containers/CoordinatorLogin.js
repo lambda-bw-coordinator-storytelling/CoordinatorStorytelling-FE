@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import GeneralNav from "../FunctionalComponents/GeneralNav";
+
 class CoordinatorLogin extends Component {
   state = {
     credentials: {
@@ -53,7 +55,10 @@ class CoordinatorLogin extends Component {
         // console.log(res.data.access_token);
         localStorage.setItem("token", res.data.access_token);
       })
-      .then(this.props.history.push("/user"))
+      .then(() => {
+        this.props.history.push("/user");
+        this.props.getMyStories();
+      })
 
       .catch(function(err) {
         console.log("There was an error: ", err.message);
@@ -63,6 +68,7 @@ class CoordinatorLogin extends Component {
   render() {
     return (
       <>
+        <GeneralNav />
         <div className="coordinator-login-page-container">
           <form onSubmit={this.handleLogin}>
             <h2>Please Log In</h2>

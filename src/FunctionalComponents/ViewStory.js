@@ -44,7 +44,7 @@ class ViewStory extends Component {
 
   deleteStory = e => {
     e.preventDefault();
-    alert("Are you sure?");
+    // alert("Are you sure?");
 
     let storyid = this.props.match.params.id;
 

@@ -10,22 +10,31 @@ html {
 
 body {
   font-family: "Rosario", "Roboto", "Prompt", sans-serif;
-  margin: 10% 0 10%;
-  padding: 0;
-
-  @media (max-width: 992px) {
-    margin: 15% 0;
-  }
-
-  @media (max-width: 768px) {
-    margin: 15% 0;
-  }
-
-  @media (max-width: 576px) {
-    margin: 25% 0;
-  }
+  color: #ffffff;
+  margin: 0;
 
   .to-top {
     text-decoration: none;
   }
+
+  // a {
+  //   text-decoration: none;
+  //   color: #ffffff;
+  // }
+
+  // @media (min-width: 350px) {
+  //   padding-top: 0;
+  // }
+
+  // @media (min-width: 576px) {
+  //   padding-top: 0;
+  // }
+
+  // @media (min-width: 860px) {
+  //   padding-top: 0;
+  // }
+
+  // @media (min-width: 992px) {
+  //   padding-top: 15%;
+  // }
 }

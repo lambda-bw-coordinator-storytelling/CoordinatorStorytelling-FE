@@ -10,19 +10,22 @@ class CoordinatorHome extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get("http://coordinator-storytelling.herokuapp.com/stories/mine", {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
-      })
+    setTimeout(() => {
+      axios
+        .get("http://coordinator-storytelling.herokuapp.com/stories/mine", {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        })
 
-      .then(res => {
-        console.log(res);
-        this.setState(() => ({ stories: res.data }));
-      })
+        .then(res => {
+          console.log(res);
 
-      .catch(function() {
-        console.log("There was an error: ");
-      });
+          this.setState(() => ({ stories: res.data }));
+        })
+
+        .catch(function() {
+          console.log("There was an error: ");
+        });
+    }, 1000);
   }
 
   render() {

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "../styles/storiesList.scss";
 
 import CountryDropdown from "../Helpers/CountryDropdown";
 import StoriesList from "../FunctionalComponents/StoriesList";
@@ -36,10 +37,13 @@ class MainStories extends Component {
       <div className="main-stories-page-container">
         <div className="title-container">
           <div className="title-logo" />
-          <h2>The Bountiful Children's Foundation</h2>
+          <img src="https://i.ibb.co/6Dcfjv4/header-globe.png" alt="globe" />
+          <h2>
+            The Bountiful
+            <br /> Children's Foundation
+          </h2>
         </div>
 
-        <h2>Explore Stories</h2>
         <div className="country-filter-container">
           <form onChange={this.setFilter}>
             <select required id="country" name="country">

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import GeneralNav from "../FunctionalComponents/GeneralNav";
 import CountryDropdown from "../Helpers/CountryDropdown";
 
 class CoordinatorSignup extends Component {
@@ -56,6 +57,7 @@ class CoordinatorSignup extends Component {
   render() {
     return (
       <>
+        <GeneralNav />
         <div className="coordinator-signup-page-container">
           <form onSubmit={this.handleSignup}>
             <h2>Create an Account</h2>

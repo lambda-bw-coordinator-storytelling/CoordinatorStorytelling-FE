@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import axios from "axios";
 import "./App.scss";
 
 // import NavBarLoggedOut from "./FunctionalComponents/NavBarLoggedOut";
@@ -14,58 +15,87 @@ import ViewStory from "./FunctionalComponents/ViewStory";
 import StoryEdit from "./Containers/StoryEdit";
 import StoryAdd from "./Containers/StoryAdd";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <Route exact path="/" render={props => <GeneralNav {...props} />} />
+class App extends React.Component {
+  state = {
+    stories: []
+  };
 
-        <Route exact path="/" render={props => <MainStories {...props} />} />
-        <Route
-          exact
-          path="/login"
-          render={props => <CoordinatorLogin {...props} />}
-        />
-        <Route
-          exact
-          path="/signup"
-          render={props => <CoordinatorSignup {...props} />}
-        />
+  getMyStories = () => {
+    axios
+      .get("http://coordinator-storytelling.herokuapp.com/stories/mine", {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+      })
 
-        <Route exact path="/user" render={props => <GeneralNav {...props} />} />
+      .then(res => {
+        console.log(res);
 
-        <Route
-          exact
-          path="/user"
-          render={props => <CoordinatorHome {...props} />}
-        />
+        this.setState(() => ({ stories: res.data }));
+      })
 
-        <Route
-          exact
-          path="/stories/:id"
-          render={props => <ViewStory {...props} />}
-        />
+      .catch(function() {
+        console.log("There was an error: ");
+      });
+  };
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="App">
+          <Route exact path="/" render={props => <GeneralNav {...props} />} />
 
-        <Route
-          exact
-          path="/user/editstory/:id"
-          render={props => <StoryEdit {...props} />}
-        />
+          <Route exact path="/" render={props => <MainStories {...props} />} />
+          <Route
+            exact
+            path="/login"
+            render={props => (
+              <CoordinatorLogin getMyStories={this.getMyStories} {...props} />
+            )}
+          />
 
-        <Route
-          exact
-          path="/user/addstory"
-          render={props => <StoryAdd {...props} />}
-        />
+          <Route
+            exact
+            path="/signup"
+            render={props => <CoordinatorSignup {...props} />}
+          />
 
-        <a className="to-top" href="#top">
-          Back to top
-        </a>
+          <Route
+            exact
+            path="/user"
+            render={props => <GeneralNav {...props} />}
+          />
 
-        <Footer />
-      </div>
-    </BrowserRouter>
-  );
+          <Route
+            exact
+            path="/user"
+            render={props => <CoordinatorHome stories={this.state.stories} />}
+          />
+
+          <Route
+            exact
+            path="/stories/:id"
+            render={props => <ViewStory {...props} />}
+          />
+
+          <Route
+            exact
+            path="/user/editstory/:id"
+            render={props => <StoryEdit {...props} />}
+          />
+
+          <Route
+            exact
+            path="/user/addstory"
+            render={props => <StoryAdd {...props} />}
+          />
+
+          <a className="to-top" href="#top">
+            Back to top
+          </a>
+
+          <Footer />
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
