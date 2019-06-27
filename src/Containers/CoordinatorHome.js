@@ -35,8 +35,6 @@ class CoordinatorHome extends Component {
         <Link to="user/addstory">Add a Story</Link>
 
         <StoriesList country="all" stories={this.state.stories} />
-
-        {/* Pass coordinator id as filterBy */}
       </div>
     );
   }

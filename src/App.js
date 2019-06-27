@@ -8,7 +8,6 @@ import MainStories from "./Containers/MainStories";
 import CoordinatorLogin from "./Containers/CoordinatorLogin";
 import CoordinatorSignup from "./Containers/CoordinatorSignup";
 import CoordinatorHome from "./Containers/CoordinatorHome";
-import CoordinatorProfile from "./Containers/CoordinatorProfile";
 import ViewStory from "./FunctionalComponents/ViewStory";
 import StoryEdit from "./Containers/StoryEdit";
 import StoryAdd from "./Containers/StoryAdd";
@@ -34,12 +33,6 @@ function App() {
           exact
           path="/user"
           render={props => <CoordinatorHome {...props} />}
-        />
-
-        <Route
-          exact
-          path="/user/profile"
-          render={props => <CoordinatorProfile {...props} />}
         />
 
         <Route

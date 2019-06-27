@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import CountryDropdown from "../Helpers/CountryDropdown";
+
 class CoordinatorSignup extends Component {
   state = {
     user: {
       firstname: "",
       lastname: "",
       email: "",
-      password: ""
+      password: "",
+      title: "",
+      country: ""
     }
   };
 
@@ -30,9 +34,9 @@ class CoordinatorSignup extends Component {
       password: this.state.user.password,
       firstname: this.state.user.firstname,
       lastname: this.state.user.lastname,
-      country: "all",
+      country: this.state.user.country,
       email: this.state.user.username,
-      title: "Coordinator"
+      title: this.state.user.title
     };
 
     axios
@@ -71,6 +75,27 @@ class CoordinatorSignup extends Component {
               value={this.state.user.lastname}
               onChange={this.handleChanges}
             />
+
+            <label htmlFor="lastname">Company Title</label>
+            <input
+              id="title"
+              type="text"
+              name="title"
+              value={this.state.user.title}
+              onChange={this.handleChanges}
+            />
+
+            <label htmlFor="country">Country</label>
+            <select
+              id="country"
+              name="country"
+              value={this.state.user.country}
+              onChange={this.handleChanges}
+            >
+              <option value="">Select Country</option>
+              <CountryDropdown />
+            </select>
+
             <label htmlFor="username">Email</label>
             <input
               id="username"

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-import NavBar from "../FunctionalComponents/NavBar";
-import Footer from "../FunctionalComponents/Footer";
 import CountryDropdown from "../Helpers/CountryDropdown";
 
 class CoordinatorProfile extends Component {
@@ -14,6 +14,16 @@ class CoordinatorProfile extends Component {
       country: ""
     }
   };
+
+  checkAuth() {
+    localStorage.getItem("token")
+      ? this.setState({
+          loggedIn: true
+        })
+      : this.setState({
+          loggedIn: false
+        });
+  }
 
   handleChanges = e => {
     this.setState({
@@ -46,7 +56,6 @@ class CoordinatorProfile extends Component {
   render() {
     return (
       <div className="coordinator-profile-page-container">
-        <NavBar />
         <h2>Your Profile</h2>
 
         <form onSubmit={this.handleUpdate}>
@@ -96,7 +105,6 @@ class CoordinatorProfile extends Component {
           </select>
           <button>Save</button>
         </form>
-        <Footer />
       </div>
     );
   }
