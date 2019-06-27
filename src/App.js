@@ -2,8 +2,9 @@ import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import "./App.scss";
 
-import NavBarLoggedOut from "./FunctionalComponents/NavBarLoggedOut";
-import NavBarLoggedIn from "./FunctionalComponents/NavBarLoggedIn";
+// import NavBarLoggedOut from "./FunctionalComponents/NavBarLoggedOut";
+// import NavBarLoggedIn from "./FunctionalComponents/NavBarLoggedIn";
+import GeneralNav from "./FunctionalComponents/GeneralNav";
 import Footer from "./FunctionalComponents/Footer";
 import MainStories from "./Containers/MainStories";
 import CoordinatorLogin from "./Containers/CoordinatorLogin";
@@ -17,11 +18,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Route
-          exact
-          path="/"
-          render={props => <NavBarLoggedOut {...props} />}
-        />
+        <Route exact path="/" render={props => <GeneralNav {...props} />} />
 
         <Route exact path="/" render={props => <MainStories {...props} />} />
         <Route
@@ -35,11 +32,7 @@ function App() {
           render={props => <CoordinatorSignup {...props} />}
         />
 
-        <Route
-          exact
-          path="/user"
-          render={props => <NavBarLoggedIn {...props} />}
-        />
+        <Route exact path="/user" render={props => <GeneralNav {...props} />} />
 
         <Route
           exact

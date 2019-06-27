@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+import GeneralNav from "./GeneralNav";
+
 class ViewStory extends Component {
   state = {
     story: null,
@@ -99,6 +101,7 @@ class ViewStory extends Component {
 
     return (
       <>
+        <GeneralNav />
         <div className="click-back-container">
           {/* <Link to=""> &#129120; Back to Stories</Link>*/}
         </div>
