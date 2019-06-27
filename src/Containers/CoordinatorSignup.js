@@ -25,16 +25,6 @@ class CoordinatorSignup extends Component {
     e.preventDefault();
     console.log("In create account function.");
 
-    // const testUser = {
-    //   username: "Harry",
-    //   password: "password",
-    //   firstname: "Harry",
-    //   lastname: "Doe",
-    //   country: "USA",
-    //   email: "john@doe.com",
-    //   title: "owner"
-    // };
-
     const newUser = {
       username: this.state.user.username,
       password: this.state.user.password,

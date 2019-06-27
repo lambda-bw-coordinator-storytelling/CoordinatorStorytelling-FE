@@ -16,42 +16,71 @@ class StoryEdit extends Component {
   handleChanges = e => {
     this.setState({
       activeStory: {
-        ...this.setState.activeStory,
+        ...this.state.activeStory,
         [e.target.name]: e.target.value
       }
     });
-    console.log(this.state.activeStory);
   };
 
   handleEdit = e => {
     e.preventDefault();
     const editedStory = {
-      date: this.state.activeStory.date,
-      title: this.state.activeStory.title,
-      country: this.state.activeStory.country,
-      description: this.state.activeStory.description,
-      content: this.state.activeStory.content
+      title: this.state.activeStory.title
     };
-    console.log(editedStory);
 
-    // this.props.editStory(
-    //   this.state.editStory.then(() => {
-    //     this.props.history.push("/protected");
-    //   })
-    // );
+    console.log("Edited story: ", editedStory);
+
+    let storyid = this.props.match.params.id;
+    console.log("Story ID: ", storyid);
+    axios
+      .put(
+        `http://coordinator-storytelling.herokuapp.com/stories/story/update/${storyid}`,
+        editedStory,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        }
+      )
+
+      .then(res => {
+        console.log(res);
+        console.log("Story added: ", res.data);
+        this.props.history.push(`/stories/${storyid}`);
+      })
+
+      .catch(function(res) {
+        console.log("There was an error: ", res);
+      });
   };
 
+  componentDidMount() {
+    let storyid = this.props.match.params.id;
+
+    axios
+      .get(`http://coordinator-storytelling.herokuapp.com/stories/${storyid}`)
+      .then(res => {
+        console.log("State before: ", this.state);
+        this.setState({
+          activeStory: res.data
+        });
+        console.log("State after: ", this.state);
+      })
+
+      .then()
+      .catch(function() {
+        console.log("There was an error: ");
+      });
+  }
+
   render() {
-    console.log(this.state);
     return (
       <div className="edit-story-page-container">
         <h2>Edit Story</h2>
 
         <form onSubmit={this.handleEdit}>
-          <label htmlFor="date">Today's date</label>
+          <label htmlFor="date">Date</label>
           <input
             id="date"
-            type="date"
+            type="text"
             name="date"
             value={this.state.activeStory.date}
             onChange={this.handleChanges}
@@ -96,7 +125,7 @@ class StoryEdit extends Component {
             onChange={this.handleChanges}
           />
 
-          <button>Submit Story</button>
+          <button>Save</button>
         </form>
       </div>
     );
