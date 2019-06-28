@@ -105,7 +105,11 @@ class ViewStory extends Component {
               {this.state.story.content}
             </div>
             <div className="story-buttons">
+              <Link to="http://paypal.com">
+                <button>Donate Now</button>
+              </Link>
               {this.state.loggedIn === true ? editButton : <div />}
+
               {this.state.loggedIn === true ? deleteButton : <div />}
             </div>
           </div>
