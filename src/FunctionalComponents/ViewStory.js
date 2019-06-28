@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import GeneralNav from "./GeneralNav";
+import "../styles/viewstory.scss";
 
 class ViewStory extends Component {
   state = {
@@ -84,15 +85,20 @@ class ViewStory extends Component {
 
     const story = this.state.story ? (
       <>
-        <div className="title-left-container">
-          <h2 className="title">{this.state.story.title}</h2>
-          <p className="country">{this.state.story.country}</p>
-        </div>
-        <p className="date">{this.state.story.date}</p>
-        <div className="story-content-container">
-          {this.state.story.content}
-          {this.state.loggedIn === true ? editButton : <div />}
-          {this.state.loggedIn === true ? deleteButton : <div />}
+        <div className="single-story-page">
+          <div className="story-container">
+            <img src={this.state.story.url} alt="story" />
+            <div className="title-container">
+              <h2 className="title">{this.state.story.title}</h2>
+              <p className="country">{this.state.story.country}</p>
+            </div>
+            <p className="date">{this.state.story.date}</p>
+            <div className="story-content-container">
+              {this.state.story.content}
+              {this.state.loggedIn === true ? editButton : <div />}
+              {this.state.loggedIn === true ? deleteButton : <div />}
+            </div>
+          </div>
         </div>
       </>
     ) : (

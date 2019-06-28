@@ -5,7 +5,6 @@ import "../styles/navbar.scss";
 
 class GeneralNav extends Component {
   logout = e => {
-    console.log("Props: ", this.props);
     localStorage.removeItem("token");
     this.props.history.push("/");
   };
@@ -27,11 +26,11 @@ class GeneralNav extends Component {
           </div>
           <div className="header-links">
             <NavLink to="/">All Stories</NavLink>
-            <NavLink to="/user">My Dashboard</NavLink>
-            <div className="welcome">Welcome!</div>
+            <NavLink to="/user">Dashboard</NavLink>
             <div className="logout-caller" onClick={e => this.logout(e)}>
               Log Out
             </div>
+            <div className="welcome">Welcome!</div>
           </div>
         </div>
       );

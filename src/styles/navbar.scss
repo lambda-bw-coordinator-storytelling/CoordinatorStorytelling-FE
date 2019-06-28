@@ -8,6 +8,7 @@
     top: 0;
     left: 0;
     width: 100%;
+
     margin: 0;
     padding: 0 1%;
     z-index: 5;
@@ -15,7 +16,8 @@
     .logo-container {
         display: flex;
         align-items: center;
-        width: 70%;
+        width: 50%;
+
 
         .logo-text {
             font-family: "Prompt", sans-serif;
@@ -30,18 +32,21 @@
     }
 
     .header-links {
+
+        width: 50%;
+        height: 100%;
         font-family: "Rosario", sans-serif;
-        text-align: right;
         display: flex;
         justify-content: flex-end;
-        width: 90%;
+        align-items: center;
+        flex-wrap: wrap;
         margin-right: 4%;
 
-        a {
+        a,
+        .logo-caller {
             margin-left: 5%;
             text-decoration: none;
             color: #fcfcfc;
-            text-align: right;
             font-size: 1.25rem;
 
             &:hover,
@@ -50,11 +55,25 @@
             }
         }
 
-        .welcome {
+        .welcome,
+        .logout-caller {
             font-family: "Rosario", sans-serif;
             text-align: right;
             font-size: 1.25rem;
             margin-left: 5%;
+        }
+
+        .logout-caller:hover {
+            color: #2a9bf0;
+        }
+
+        a,
+        .welcome,
+        .logout-caller {
+
+            height: 100%;
+            display: flex;
+            align-items: center;
         }
     }
 }

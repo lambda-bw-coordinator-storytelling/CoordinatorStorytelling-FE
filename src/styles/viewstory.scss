@@ -1,0 +1,26 @@
+.single-story-page {
+    color: black;
+
+    img {
+        max-width: 30%;
+        float: left;
+        margin: 0 2% 2% 0;
+    }
+
+    .title-container {
+        h2 {
+            margin: 0;
+            padding: 0;
+            // line-height: .5rem;
+        }
+    }
+
+    .story-container {
+        width: 80%;
+        margin: 20% auto;
+        background-color: rgba(225, 225, 225, .5);
+        padding: 5%;
+    }
+
+
+}
