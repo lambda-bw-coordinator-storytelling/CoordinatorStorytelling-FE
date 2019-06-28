@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "../styles/storiesList.scss";
+import "../styles/dashboard.scss";
 
 import StoriesList from "../FunctionalComponents/StoriesList";
 
@@ -30,12 +32,12 @@ class CoordinatorHome extends Component {
 
   render() {
     return (
-      <div className="coordinator-home-page-container">
+      <div className="stories-page-container">
         <div className="title-container">
           <div className="title-logo" />
-          <h2>The Bountiful Children's Foundation</h2>
+          <div>Your Submissions</div>
+          <Link to="user/addstory">Add a Story</Link>
         </div>
-        <Link to="user/addstory">Add a Story</Link>
 
         <StoriesList country="all" stories={this.state.stories} />
       </div>

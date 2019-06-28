@@ -4,71 +4,62 @@
 // "Prompt", sans-serif;
 
 html {
-  scroll-behavior: smooth;
-  box-sizing: border-box;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Rosario", "Roboto", "Prompt", sans-serif;
-  color: #ffffff;
-  margin: 0;
+    font-family: "Rosario", "Roboto", "Prompt", sans-serif;
+    color: #ffffff;
+    margin: 0;
 
-  .to-top {
-    text-decoration: none;
-  }
+    .to-top {
+        text-decoration: none;
+    }
 }
 
 .form-container {
-  width: 50%;
-  max-width: 400px;
-  // height: 100px;
-  padding: 5%;
-  margin-bottom: 300px;
-  // @media (max-width: 1150px) {
-  //   margin: 200px 0;
-  // }
-
-  // @media (max-width: 300px) {
-  //   width: 100%;
-  //   margin: 200px;
-  //   border-radius: none;
-  // }
-  background-color: rgba(255, 255, 255, 0.8);
-  color: black;
-  border-radius: 0px 15px;
-  // border: 1px solid black;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.styled-form {
-  display: flex;
-  flex-direction: column;
-
-  label {
-    margin-bottom: 1%;
-  }
-
-  label,
-  button {
-    margin-top: 3%;
-  }
-
-  input,
-  select {
-    padding: 2%;
-  }
-
-  button {
-    background-color: #538a28;
-    color: white;
-    border: none;
+    width: 50%;
+    max-width: 400px;
+    padding: 5%;
+    margin-bottom: 300px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    border-radius: 0px 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 5px;
-    padding: 2%;
-    font-size: 1.25rem;
-    font-family: "Rosario";
-    &:hover {
-      background-color: #5ea824;
+
+    .styled-form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-bottom: 1%;
+        }
+
+        label,
+        button {
+            margin-top: 3%;
+        }
+
+        input,
+        select {
+            padding: 2%;
+        }
+
+        button {
+            background-color: #538a28;
+            color: white;
+            border: none;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 5px;
+            padding: 2%;
+            font-size: 1.25rem;
+            font-family: "Rosario";
+
+            &:hover {
+                background-color: #5ea824;
+            }
+        }
     }
-  }
+
 }

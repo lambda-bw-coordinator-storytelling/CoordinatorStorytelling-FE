@@ -4,6 +4,11 @@ import { NavLink, Link } from "react-router-dom";
 import "../styles/navbar.scss";
 
 class GeneralNav extends Component {
+  logout = e => {
+    localStorage.removeItem("token");
+    this.props.history.push("/");
+  };
+
   setNav() {
     if (localStorage.getItem("token") != null) {
       return (
@@ -21,6 +26,10 @@ class GeneralNav extends Component {
           </div>
           <div className="header-links">
             <NavLink to="/">All Stories</NavLink>
+            <NavLink to="/user">Dashboard</NavLink>
+            <div className="logout-caller" onClick={e => this.logout(e)}>
+              Log Out
+            </div>
             <div className="welcome">Welcome!</div>
           </div>
         </div>

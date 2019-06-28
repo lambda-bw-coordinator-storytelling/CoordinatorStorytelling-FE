@@ -1,60 +1,79 @@
 .navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #010d04;
-  color: #fcfcfc;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0 1%;
-  z-index: 5;
-
-  .logo-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    width: 70%;
+    background-color: #010d04;
+    color: #fcfcfc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 
-    .logo-text {
-      font-family: "Prompt", sans-serif;
-      font-weight: 300;
-      margin-left: 5%;
+    margin: 0;
+    padding: 0 1%;
+    z-index: 5;
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        width: 50%;
+
+
+        .logo-text {
+            font-family: "Prompt", sans-serif;
+            font-weight: 300;
+            margin-left: 5%;
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
     }
 
-    img {
-      width: 40px;
-      height: 40px;
+    .header-links {
+
+        width: 50%;
+        height: 100%;
+        font-family: "Rosario", sans-serif;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-right: 4%;
+
+        a,
+        .logo-caller {
+            margin-left: 5%;
+            text-decoration: none;
+            color: #fcfcfc;
+            font-size: 1.25rem;
+
+            &:hover,
+            .active {
+                color: #2a9bf0;
+            }
+        }
+
+        .welcome,
+        .logout-caller {
+            font-family: "Rosario", sans-serif;
+            text-align: right;
+            font-size: 1.25rem;
+            margin-left: 5%;
+        }
+
+        .logout-caller:hover {
+            color: #2a9bf0;
+        }
+
+        a,
+        .welcome,
+        .logout-caller {
+
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
     }
-  }
-
-  .header-links {
-    font-family: "Rosario", sans-serif;
-    text-align: right;
-    display: flex;
-    justify-content: flex-end;
-    width: 90%;
-    margin-right: 4%;
-
-    a {
-      margin-left: 5%;
-      text-decoration: none;
-      color: #fcfcfc;
-      text-align: right;
-      font-size: 1.25rem;
-
-      &:hover,
-      .active {
-        color: #2a9bf0;
-      }
-    }
-
-    .welcome {
-      font-family: "Rosario", sans-serif;
-      text-align: right;
-      font-size: 1.25rem;
-      margin-left: 5%;
-    }
-  }
 }
