@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 
-import "../styles/navbars.scss";
+import "../styles/navbar.scss";
 
 class GeneralNav extends Component {
   setNav() {
