@@ -46,7 +46,7 @@ class GeneralNav extends Component {
               />
             </Link>
 
-            <h2 className="logo-text">The Boutiful Children's Foundation</h2>
+            <h2 className="logo-text">The Bountiful Children's Foundation</h2>
           </div>
           <div className="header-links">
             <NavLink to="/">Stories</NavLink>
