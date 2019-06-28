@@ -7,11 +7,11 @@ const StoriesList = props => {
   console.log(props.stories);
   let filteredList = [...props.stories];
 
-  // props.country === "all"
-  //   ? (filteredList = props.stories)
-  //   : (filteredList = props.stories.filter(
-  //       story => story.country === props.country
-  //     ));
+  props.country === "all"
+    ? (filteredList = props.stories)
+    : (filteredList = props.stories.filter(
+        story => story.country === props.country
+      ));
 
   return (
     <>
