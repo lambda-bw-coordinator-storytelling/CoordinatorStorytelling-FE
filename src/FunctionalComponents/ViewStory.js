@@ -28,6 +28,7 @@ class ViewStory extends Component {
     axios
       .get(`http://coordinator-storytelling.herokuapp.com/stories/${storyid}`)
       .then(res => {
+        console.log("Returned Data: ", res.data);
         this.setState({
           story: res.data
         });
