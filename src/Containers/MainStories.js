@@ -13,6 +13,7 @@ class MainStories extends Component {
 
   setFilter = e => {
     const newCountry = e.target.value;
+
     this.setState({
       countryFilter: newCountry
     });
@@ -21,12 +22,13 @@ class MainStories extends Component {
   componentDidMount() {
     axios
       .get("http://coordinator-storytelling.herokuapp.com/stories/all")
-
       .then(res => {
         console.log(res);
-        this.setState(() => ({ stories: res.data }));
-      })
 
+        this.setState(() => ({
+          stories: res.data
+        }));
+      })
       .catch(function() {
         console.log("There was an error: ");
       });
@@ -34,22 +36,25 @@ class MainStories extends Component {
 
   render() {
     console.log("Country Filter: ", this.state.countryFilter);
-    return (
-      <div className="main-stories-page-container">
-        <div className="country-filter-container">
-          <form onChange={this.setFilter}>
-            <select required id="country" name="country">
-              <option>Filter by Country</option>
-              <option value="all">All</option>
-              <CountryDropdown />
-            </select>
-          </form>
-        </div>
 
+    return (
+      <div className="stories-page-container">
+        {" "}
+        <div className="country-filter-container">
+          {" "}
+          <form onChange={this.setFilter}>
+            {" "}
+            <select required id="country" name="country">
+              {" "}
+              <option>Filter by Country</option>{" "}
+              <option value="all">All</option> <CountryDropdown />{" "}
+            </select>{" "}
+          </form>{" "}
+        </div>{" "}
         <StoriesList
           country={this.state.countryFilter}
           stories={this.state.stories}
-        />
+        />{" "}
       </div>
     );
   }
