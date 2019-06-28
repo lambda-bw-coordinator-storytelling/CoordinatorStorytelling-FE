@@ -45,7 +45,7 @@ class ViewStory extends Component {
 
   deleteStory = e => {
     e.preventDefault();
-    // alert("Are you sure?");
+    alert("This is forever!");
 
     let storyid = this.props.match.params.id;
 
@@ -81,20 +81,29 @@ class ViewStory extends Component {
       </Link>
     );
 
-    const deleteButton = <button onClick={this.deleteStory}>Delete</button>;
+    const deleteButton = (
+      <button className="delete-button" onClick={this.deleteStory}>
+        Delete
+      </button>
+    );
 
     const story = this.state.story ? (
       <>
-        <div className="single-story-page">
-          <div className="story-container">
+        <div className="single-story-page view-page">
+          <div className="story-container view-story">
             <img src={this.state.story.url} alt="story" />
-            <div className="title-container">
+
+            <div className="title-container view-title">
               <h2 className="title">{this.state.story.title}</h2>
               <p className="country">{this.state.story.country}</p>
             </div>
+
             <p className="date">{this.state.story.date}</p>
+
             <div className="story-content-container">
               {this.state.story.content}
+            </div>
+            <div className="story-buttons">
               {this.state.loggedIn === true ? editButton : <div />}
               {this.state.loggedIn === true ? deleteButton : <div />}
             </div>
@@ -111,7 +120,7 @@ class ViewStory extends Component {
         <div className="click-back-container">
           {/* <Link to=""> &#129120; Back to Stories</Link>*/}
         </div>
-        <div className="story-container">{story}</div>
+        <div>{story}</div>
       </>
     );
   }
