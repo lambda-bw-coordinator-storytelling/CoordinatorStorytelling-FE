@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import CountryDropdown from "../Helpers/CountryDropdown";
+import GeneralNav from "../FunctionalComponents/GeneralNav";
+import "../styles/editstory.scss";
 
 class StoryEdit extends Component {
   state = {
@@ -79,71 +81,79 @@ class StoryEdit extends Component {
 
   render() {
     return (
-      <div className="edit-story-page-container">
-        <h2>Edit Story</h2>
+      <>
+        <GeneralNav />
+        <div className="edit-story-page-container">
+          <header>
+            <h2>Edit Story</h2>
+          </header>
+          <div className="edit-story-container">
+            <form onSubmit={this.handleEdit}>
+              <div className="col-left">
+                <label htmlFor="date">Date</label>
+                <input
+                  id="date"
+                  type="date"
+                  name="date"
+                  value={this.state.activeStory.date}
+                  onChange={this.handleChanges}
+                />
 
-        <form onSubmit={this.handleEdit}>
-          <></>
-          <label htmlFor="date">Date</label>
-          <input
-            id="date"
-            type="date"
-            name="date"
-            value={this.state.activeStory.date}
-            onChange={this.handleChanges}
-          />
+                <label htmlFor="title">Title of Story</label>
+                <input
+                  id="title"
+                  type="text"
+                  name="title"
+                  value={this.state.activeStory.title}
+                  onChange={this.handleChanges}
+                />
 
-          <label htmlFor="title">Title of Story</label>
-          <input
-            id="title"
-            type="text"
-            name="title"
-            value={this.state.activeStory.title}
-            onChange={this.handleChanges}
-          />
+                <label htmlFor="country">Country</label>
+                <select
+                  required
+                  id="country"
+                  name="country"
+                  value={this.state.activeStory.country}
+                  onChange={this.handleChanges}
+                >
+                  <option value="">Select Country</option>
+                  <CountryDropdown />
+                </select>
 
-          <label htmlFor="country">Country</label>
-          <select
-            required
-            id="country"
-            name="country"
-            value={this.state.activeStory.country}
-            onChange={this.handleChanges}
-          >
-            <option value="">Select Country</option>
-            <CountryDropdown />
-          </select>
+                <label htmlFor="description">Description</label>
+                <textarea
+                  id="description"
+                  type="description"
+                  name="description"
+                  value={this.state.activeStory.description}
+                  onChange={this.handleChanges}
+                />
 
-          <label htmlFor="description">Description</label>
-          <input
-            id="description"
-            type="description"
-            name="description"
-            value={this.state.activeStory.description}
-            onChange={this.handleChanges}
-          />
+                <label htmlFor="url">Image URL</label>
+                <input
+                  id="url"
+                  type="text"
+                  name="url"
+                  value={this.state.activeStory.url}
+                  onChange={this.handleChanges}
+                />
+              </div>
+              <div className="col-right">
+                <label htmlFor="content">Content</label>
+                <textarea
+                  id="content"
+                  type="content"
+                  name="content"
+                  value={this.state.activeStory.content}
+                  onChange={this.handleChanges}
+                />
 
-          <label htmlFor="content">Content</label>
-          <input
-            id="content"
-            type="content"
-            name="content"
-            value={this.state.activeStory.content}
-            onChange={this.handleChanges}
-          />
-
-          <label htmlFor="url">Image URL</label>
-          <input
-            id="url"
-            type="text"
-            name="url"
-            value={this.state.activeStory.url}
-            onChange={this.handleChanges}
-          />
-
-          <button>Save</button>
-        </form>
-      </div>
+                <button>Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </>
     );
   }
 }

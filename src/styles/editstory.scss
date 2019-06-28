@@ -1,0 +1,75 @@
+.edit-story-page-container {
+    max-width: 800px;
+    width: 80%;
+    margin: 10% auto;
+
+    .edit-story-container {
+        background-color: rgba(255, 255, 255, 1);
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5%;
+        border-radius: 10px;
+    }
+
+    form {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        // border: 1px solid red;
+
+        label {
+            margin: 1.5rem 0 .5rem;
+            font-weight: 600;
+        }
+
+        input,
+        select,
+        textarea {
+            padding: 3%;
+            background-color: #e9f3fb;
+            border: none;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        textarea#content {
+            height: 100%;
+        }
+
+        .col-left,
+        .col-right {
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+        }
+
+
+
+        button {
+            margin-top: 5%;
+            width: 50%;
+            align-self: flex-end;
+            padding: 2% 0;
+            background-color: #47aaf5;
+            color: white;
+            border: none;
+            font-family: "Rosario";
+            font-size: 1.25rem;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 5px;
+
+            &:hover {
+                background-color: #258cda;
+            }
+        }
+
+
+    }
+
+}
